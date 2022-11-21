@@ -1,0 +1,14 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "backend"
+    }
+  ],
+  "settings": {
+    "i18n-ally.localesPaths": ["backend/lang"],
+    "cSpell.words": ["Thessenger"]
+  }
+}
