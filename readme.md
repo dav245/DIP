@@ -4,7 +4,7 @@ This thesis should compare different approaches to reactivity, DOM syncing and c
 
 ## Contents of repository
 
-- Backend - contains server written on top of [Laravel 9](https://laravel.com/) for messaging app
+- Backend - contains server written on top of [Laravel 9](https://laravel.com/). It is simple messaging app
 - CommonFrontend - folder, that is accessible from all frontends
 - Vue - Frontend written in vue
 
