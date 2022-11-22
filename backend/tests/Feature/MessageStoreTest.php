@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use App\Models\User;
 use Tests\TestCase;
 
-class MessageSendTest extends TestCase
+class MessageStoreTest extends TestCase
 {
     protected User $user;
     protected User $other1;
