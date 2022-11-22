@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -15,6 +16,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $nickname
  * @property string $email
  * @property string $password
+ * 
+ * @property Collection $sentMessages
  */
 class User extends Authenticatable
 {
