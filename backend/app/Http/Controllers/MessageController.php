@@ -22,7 +22,7 @@ class MessageController extends Controller
         return $message->load('toUsers');
     }
 
-    public function create(CreateMessageRequest $request): Message
+    public function store(CreateMessageRequest $request): Message
     {
         $message = Message::make($request->validated());
 
