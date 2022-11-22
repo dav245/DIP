@@ -11,7 +11,5 @@ class RoutesTest extends TestCase
         $response = $this->getJson(route('route.routes'));
 
         $response->assertStatus(200);
-
-        dd($response->json());
     }
 }
