@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Message;
 use App\Models\User;
 use Tests\TestCase;
 
@@ -41,6 +42,8 @@ class MessageStoreTest extends TestCase
             'message_id' => $response->json('id'),
             'user_id' => $this->other1->id,
         ]);
+
+        $this->user->sentMessages->contains('id', $response->json('id'));
     }
 
     public function test_user_can_send_message_to_single_recipient_and_send_right_away()
