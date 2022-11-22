@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,17 @@ Route::middleware('auth:sanctum')->group(function () {
         ->name('user.')
         ->group(function () {
             Route::get('self', 'self')->name('self');
+        });
+
+    Route::controller(MessageController::class)
+        ->prefix('/message/')
+        ->name('message.')
+        ->group(function () {
+            Route::get('messages', 'messages')->name('messages');
+            Route::get('message/{message}', 'message')->name('message');
+            Route::put('message', 'store')->name('store');
+            Route::post('message/{message}', 'update')->name('update');
+            Route::delete('message/{message}', 'delete')->name('delete');
         });
 });
 
