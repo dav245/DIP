@@ -59,6 +59,18 @@ class MessageUpdateTest extends TestCase
         $response->assertStatus(403);
     }
 
+    public function test_user_can_not_update_message_of_other_user()
+    {
+        $response = $this->actingAs($this->other)->postJson(route('message.update', [
+            'message' => $this->message->id,
+            'subject' => 'subject',
+            'content' => 'content',
+            'recipients' => [$this->other->id],
+        ]));
+
+        $response->assertStatus(403);
+    }
+
     public function test_not_logged_in_user_cannot_update_message()
     {
         $response = $this->postJson(route('message.update', [
