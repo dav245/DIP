@@ -12,6 +12,12 @@ class Message extends Model
 {
     use HasFactory, HasBaseTypings;
 
+    protected $fillable = [
+        'subject',
+        'content',
+        'sent'
+    ];
+
     public function fromUser(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');

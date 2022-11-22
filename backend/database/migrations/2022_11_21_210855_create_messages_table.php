@@ -22,6 +22,8 @@ return new class extends Migration
 
             $table->text('content');
 
+            $table->boolean('sent')->default(false);
+
             $table->dateTime('seen_at')->nullable();
 
             $table->softDeletes();
