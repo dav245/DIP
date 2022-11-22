@@ -39,6 +39,8 @@ class MessageController extends Controller
     {
         $message->update($request->validated());
 
+        $message->toUsers()->sync($request->recipients);
+
         return $message;
     }
 
