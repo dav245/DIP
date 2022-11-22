@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Message\CreateMessageRequest;
+use App\Http\Requests\Message\SendMessageRequest;
 use App\Http\Requests\Message\UpdateMessageRequest;
 use App\Models\Message;
 use App\Models\User;
@@ -40,6 +41,13 @@ class MessageController extends Controller
         $message->update($request->validated());
 
         $message->toUsers()->sync($request->recipients);
+
+        return $message;
+    }
+
+    public function send(SendMessageRequest $request, Message $message): Message
+    {
+        $message->update(['sent' => true]);
 
         return $message;
     }
