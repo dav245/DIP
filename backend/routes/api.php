@@ -29,7 +29,9 @@ Route::middleware('auth:sanctum')->group(function () {
         ->prefix('/message/')
         ->name('message.')
         ->group(function () {
-            Route::get('messages', 'messages')->name('messages');
+            Route::get('messages/received', 'received')->name('received');
+            Route::get('messages/sent', 'sent')->name('sent');
+            Route::get('messages/drafts', 'drafts')->name('drafts');
             Route::get('message/{message}', 'message')->name('message');
             Route::put('message', 'store')->name('store');
             Route::post('message/{message}', 'update')->name('update');

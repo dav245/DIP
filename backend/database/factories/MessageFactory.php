@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\MessageType;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -15,7 +16,8 @@ class MessageFactory extends Factory
         return [
             'subject' => fake()->realText(60),
             'content' => fake()->realText(1200),
-            'user_id' => User::factory()
+            'type' => fake()->randomElement(MessageType::values()),
+            'owner_id' => User::factory(),
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Requests\Message;
 /**
  * @property string $subject
  * @property string $content
+ * @property bool $send
  * @property int[] $recipients
  */
 trait CommonMessageRules
@@ -16,7 +17,7 @@ trait CommonMessageRules
             'content' => ['required', 'max:3000'],
             'recipients' => ['required', 'array', 'min:1'],
             'recipients.*' => ['required', 'integer'],
-            'sent' => ['nullable', 'boolean']
+            'send' => ['nullable', 'boolean']
         ];
     }
 }

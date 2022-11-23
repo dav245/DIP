@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Models\Message;
+use App\Enums\MessageType;
 use App\Models\User;
 use Tests\TestCase;
 
@@ -35,7 +35,7 @@ class MessageStoreTest extends TestCase
             'id' => $response->json('id'),
             'subject' => 'subject',
             'content' => 'content',
-            'sent' => false
+            'type' => MessageType::DRAFT()->type()
         ]);
 
         $this->assertDatabaseHas('message_user', [
@@ -52,7 +52,7 @@ class MessageStoreTest extends TestCase
             'subject' => 'subject',
             'content' => 'content',
             'recipients' => [$this->other1->id],
-            'sent' => '1'
+            'send' => '1'
         ]));
 
         $response->assertStatus(201);
@@ -61,7 +61,7 @@ class MessageStoreTest extends TestCase
             'id' => $response->json('id'),
             'subject' => 'subject',
             'content' => 'content',
-            'sent' => true
+            'type' => MessageType::SENT()
         ]);
 
         $this->assertDatabaseHas('message_user', [
@@ -82,10 +82,10 @@ class MessageStoreTest extends TestCase
 
         $this->assertDatabaseHas('messages', [
             'id' => $response->json('id'),
-            'user_id' => $this->user->id,
+            'owner_id' => $this->user->id,
             'subject' => 'subject',
             'content' => 'content',
-            'sent' => false
+            'type' => MessageType::DRAFT()
         ]);
 
         $this->assertDatabaseHas('message_user', [
@@ -102,7 +102,6 @@ class MessageStoreTest extends TestCase
     public function test_not_logged_in_user_cannot_send_message()
     {
         $response = $this->putJson(route('message.store', [
-            'from_user' => $this->user->id,
             'subject' => 'subject',
             'content' => 'content',
             'recipients' => [$this->other1->id],

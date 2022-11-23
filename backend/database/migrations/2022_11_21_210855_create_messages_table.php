@@ -16,13 +16,14 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('user_id')->constrained()->restrictOnDelete()->cascadeOnUpdate();
+            $table->foreignId('owner_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('sent_from_id')->nullable()->constrained('users')->restrictOnDelete()->cascadeOnUpdate();
 
             $table->string('subject');
 
             $table->text('content');
 
-            $table->boolean('sent')->default(false);
+            $table->string('type');
 
             $table->dateTime('seen_at')->nullable();
 

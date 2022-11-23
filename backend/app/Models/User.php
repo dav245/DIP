@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\MessageType;
 use App\Traits\HasBaseTypings;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -46,11 +47,11 @@ class User extends Authenticatable
 
     public function sentMessages(): HasMany
     {
-        return $this->hasMany(Message::class, 'user_id');
+        return $this->hasMany(Message::class, 'owner_id')->whereNull('sent_from_id');
     }
 
-    public function receivedMessages(): BelongsToMany
+    public function receivedMessages(): HasMany
     {
-        return $this->belongsToMany(Message::class, 'message_user');
+        return $this->hasMany(Message::class, 'owner_id')->where('type', MessageType::RECEIVED());
     }
 }

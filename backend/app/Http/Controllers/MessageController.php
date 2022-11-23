@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\MessageType;
 use App\Http\Requests\Message\CreateMessageRequest;
-use App\Http\Requests\Message\SendMessageRequest;
 use App\Http\Requests\Message\UpdateMessageRequest;
 use App\Models\Message;
 use App\Models\User;
@@ -11,49 +11,88 @@ use Illuminate\Contracts\Pagination\Paginator;
 
 class MessageController extends Controller
 {
-    public function messages(): Paginator
+    public function received(): Paginator
     {
-        return Message::query()
-            ->where('user_id', User::logged()->id)
+        $this->authorize('viewOwn', Message::class);
+
+        return Message::receivedMessages()->paginate();
+    }
+
+    public function sent(): Paginator
+    {
+        $this->authorize('viewOwn', Message::class);
+
+        return Message::sentMessages()
+            ->where('type', MessageType::SENT())
+            ->paginate();
+    }
+
+    public function drafts(): Paginator
+    {
+        $this->authorize('viewOwn', Message::class);
+
+        return Message::sentMessages()
+            ->where('type', MessageType::DRAFT())
             ->paginate();
     }
 
     public function message(Message $message): Message
     {
-        return $message->load('toUsers');
+        $this->authorize('view', $message);
+
+        return $message->load('recipients');
     }
 
     public function store(CreateMessageRequest $request): Message
     {
+        $this->authorize('create', Message::class);
+
         $message = Message::make($request->validated());
 
-        $message->fromUser()->associate(User::logged());
+        $message->owner()->associate(User::logged());
+        $message->type = MessageType::DRAFT();
 
         $message->save();
 
-        $message->toUsers()->sync($request->recipients);
+        $message->recipients()->sync($request->recipients);
+
+        if ($request->send) {
+            $message->send();
+        }
 
         return $message;
     }
 
     public function update(UpdateMessageRequest $request, Message $message): Message
     {
+        $this->authorize('update', $message);
+
         $message->update($request->validated());
 
-        $message->toUsers()->sync($request->recipients);
+        $message->recipients()->sync($request->recipients);
+
+        if ($request->send) {
+            $message->send();
+        }
 
         return $message;
     }
 
-    public function send(SendMessageRequest $request, Message $message): Message
+    public function send(Message $message): Message
     {
-        $message->update(['sent' => true]);
+        $this->authorize('send', $message);
+
+        $message->send();
 
         return $message;
     }
 
-    public function delete(Message $message)
+    public function delete(Message $message): int
     {
+        $this->authorize('delete', $message);
+
         $message->delete();
+
+        return 1;
     }
 }
