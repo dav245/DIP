@@ -1,0 +1,62 @@
+:root {
+  --v-base-unit: 8px;
+  --v-space-base-x: 0.5;
+  --v-space-base-y: 4;
+  --v-primary: 194, 224, 251;
+  --v-secondary: 255, 223, 206;
+  --v-success: 158, 249, 151;
+  --v-error: 255, 175, 175;
+  --v-border-primary: 121, 173, 220;
+  --v-border-secondary: 255, 192, 159;
+  --v-border-success: 75, 181, 67;
+  --v-border-error: 255, 51, 51;
+  --v-background: 254, 251, 231;
+  --v-background-secondary: 255, 255, 255;
+  --v-text: 0, 0, 0;
+  --v-font-size: 16px;
+}
+
+@import "./reset.scss";
+@import "breakpoints.scss";
+@import "spacing.scss";
+
+@import "guest-layout.scss";
+@import "card.scss";
+@import "input.scss";
+@import "button.scss";
+
+@import "login.scss";
+
+@font-face {
+  font-family: "Montserrat";
+  src: url(/Montserrat-VariableFont_wght.ttf) format("truetype");
+}
+
+* {
+  background-color: inherit;
+}
+
+#app {
+  width: 100vw;
+  min-height: 100vh;
+  font-size: var(--v-font-size);
+  font-family: "Montserrat";
+}
+
+#app {
+  background-color: rgb(var(--v-background));
+  color: rgb(var(--v-text));
+}
+
+@include sm {
+  :root {
+    --v-space-base-x: 1;
+    --v-base-unit: 6px;
+  }
+}
+
+@include md {
+  :root {
+    --v-space-base-x: 2;
+  }
+}

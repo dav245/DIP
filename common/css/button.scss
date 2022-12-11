@@ -1,0 +1,34 @@
+.button {
+  --v-button-color: var(--v-primary);
+  --v-button-border-color: var(--v-border-primary);
+
+  padding: calc(2 * var(--v-base-unit));
+  border: 1px solid rgb(var(--v-button-border-color));
+  background-color: rgb(var(--v-button-color));
+  border-radius: 4px;
+  cursor: pointer;
+
+  box-shadow: -4px 4px 8px rgba(var(--v-button-border-color), 0.2),
+    4px 4px 8px rgba(var(--v-button-border-color), 0.2);
+}
+
+.button:hover {
+  filter: brightness(1.05);
+}
+
+.button:active {
+  filter: brightness(0.95);
+}
+
+.button__success {
+  --v-button-color: var(--v-success);
+  --v-button-border-color: var(--v-border-success);
+}
+.button__error {
+  --v-button-color: var(--v-error);
+  --v-button-border-color: var(--v-border-error);
+}
+.button__secondary {
+  --v-button-color: var(--v-secondary);
+  --v-button-border-color: var(--v-border-secondary);
+}

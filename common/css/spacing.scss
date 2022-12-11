@@ -1,0 +1,7 @@
+@function space-x($i: 1) {
+  @return calc($i * var(--v-space-base-x) * var(--v-base-unit));
+}
+
+@function space-y($i: 1) {
+  @return calc($i * var(--v-space-base-y) * var(--v-base-unit));
+}

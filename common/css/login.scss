@@ -1,0 +1,22 @@
+.login-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: space-y() space-x();
+  margin-bottom: space-y();
+}
+
+.login-submit {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  text-align: center;
+}
+
+@include sm {
+  .login-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .login-submit {
+    width: auto;
+  }
+}

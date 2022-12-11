@@ -1,0 +1,19 @@
+.guest-layout {
+  min-height: 100vh;
+  width: 95vw;
+
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: space-y() space-x();
+}
+
+@include sm {
+  .guest-layout {
+    width: min(90vw, 1024px);
+  }
+}

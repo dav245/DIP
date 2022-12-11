@@ -1,0 +1,25 @@
+.card {
+  --v-card-spacing-x: #{space-x(2)};
+  --v-card-spacing-y: #{space-y()};
+
+  width: 100%;
+
+  background-color: rgb(var(--v-background-secondary));
+
+  border: 1px solid rgb(var(--v-border-primary));
+  border-radius: 4px;
+  padding: var(--v-card-spacing-y) var(--v-card-spacing-x);
+
+  box-shadow: -4px 4px 8px rgba(var(--v-border-primary), 0.4),
+    4px 4px 8px rgba(var(--v-border-primary), 0.4);
+}
+
+.card-header {
+  border-bottom: 1px solid rgb(var(--v-border-primary));
+  margin: 0 calc(-1 * var(--v-card-spacing-x)) var(--v-card-spacing-y)
+    calc(-1 * var(--v-card-spacing-x));
+  padding: 0 var(--v-card-spacing-x) var(--v-card-spacing-y)
+    var(--v-card-spacing-x);
+
+  font-size: calc(1.5 * var(--v-font-size));
+}

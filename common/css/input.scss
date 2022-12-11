@@ -1,0 +1,45 @@
+.input-with-label {
+  --v-input-spacing: calc(2 * var(--v-base-unit));
+
+  position: relative;
+}
+
+.input {
+  width: 100%;
+
+  border: 1px solid rgb(var(--v-border-primary));
+  border-radius: 4px;
+  padding: var(--v-input-spacing);
+  box-shadow: 2px 2px 8px rgba(var(--v-border-primary), 0.2);
+}
+
+.label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left: var(--v-input-spacing);
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 4px;
+  transform: translateY(var(--v-input-spacing));
+}
+
+.label:has(+ .input:not(:placeholder-shown)),
+.label:has(+ .input:focus) {
+  transform: translateY(-50%);
+  margin-left: calc(var(--v-input-spacing) / 2);
+  padding: 0 calc(var(--v-input-spacing) / 2);
+}
+
+.input__state-success {
+  --v-border-primary: var(--v-border-success);
+}
+
+.input__state-error {
+  --v-border-primary: var(--v-border-error);
+}
+
+.input__state-error > .input-messages {
+  margin-top: space-y(0.5);
+  color: rgb(var(--v-border-error));
+}
