@@ -20,13 +20,13 @@ class AuthController extends Controller
             ]);
         }
 
-        return $user->createToken($request->device_name)->plainTextToken;
+        return ['token' => $user->createToken($request->device_name)->plainTextToken];
     }
 
     public function register(RegisterRequest $request)
     {
         $user = User::create($request->validated());
 
-        return $user->createToken($request->device_name)->plainTextToken;
+        return ['token' => $user->createToken($request->device_name)->plainTextToken];
     }
 }

@@ -41,4 +41,14 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
       layout: () => GuestLayout,
     },
   },
+
+  {
+    path: "/designer/messages",
+    name: "designerMessages",
+    component: () => import("./Messages.vue"),
+    meta: {
+      guest: true,
+      layout: () => GuestLayout,
+    },
+  },
 ];

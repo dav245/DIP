@@ -12,6 +12,11 @@
     4px 4px 8px rgba(var(--v-button-border-color), 0.2);
 }
 
+.button:focus {
+  outline: 2px solid rgb(var(--v-button-border-color));
+  outline-offset: 0px;
+}
+
 .button:hover {
   filter: brightness(1.05);
 }
@@ -31,4 +36,9 @@
 .button__secondary {
   --v-button-color: var(--v-secondary);
   --v-button-border-color: var(--v-border-secondary);
+}
+
+.button__small {
+  font-size: calc(var(--v-font-size) / 2);
+  padding: var(--v-base-unit);
 }

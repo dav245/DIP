@@ -10,9 +10,10 @@
   --v-border-secondary: 255, 192, 159;
   --v-border-success: 75, 181, 67;
   --v-border-error: 255, 51, 51;
-  --v-background: 254, 251, 231;
+  --v-background: 245, 245, 255;
   --v-background-secondary: 255, 255, 255;
   --v-text: 0, 0, 0;
+  --v-text-primary: 50, 83, 130;
   --v-font-size: 16px;
 }
 
@@ -24,8 +25,11 @@
 @import "card.scss";
 @import "input.scss";
 @import "button.scss";
+@import "messages.scss";
+@import "link.scss";
 
 @import "login.scss";
+@import "register.scss";
 
 @font-face {
   font-family: "Montserrat";
@@ -36,7 +40,7 @@
   background-color: inherit;
 }
 
-#app {
+html {
   width: 100vw;
   min-height: 100vh;
   font-size: var(--v-font-size);

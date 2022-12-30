@@ -15,6 +15,15 @@ const routes: RouteRecordRaw[] = [
     },
   },
   {
+    path: "/register",
+    name: "register",
+    component: () => import("@p/Register.vue"),
+    meta: {
+      guest: true,
+      layout: () => GuestLayout,
+    },
+  },
+  {
     path: "/home",
     name: "home",
     component: () => import("@p/Home.vue"),

@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { getRequired } from "@/common/ts/validation/required";
-import { RuleType } from "@/common/ts/validation/ruleType";
+import { getRequired } from "@common/ts/validation/required";
+import { RuleType } from "@common/ts/validation/ruleType";
 import {
-  validateFields,
   ValidationField,
   validationFieldsKey,
   validationStateKey,
-} from "@/common/ts/validation/validateFields";
-import { inject, watch, ref, computed, Ref } from "vue";
+} from "@common/ts/validation/validateFields";
+import { inject, watch, ref, computed, Ref, useAttrs } from "vue";
 
 const props = defineProps<{
   name?: string;
@@ -16,7 +15,11 @@ const props = defineProps<{
   required?: boolean;
   value?: string;
   rules?: RuleType[];
-  "onUpdate:value"?: (value: string) => void;
+  type?: string;
+}>();
+
+const emits = defineEmits<{
+  (e: "update:value", value: string): void;
 }>();
 
 const innerValue = ref(props.value ?? "");
@@ -50,11 +53,9 @@ watch(
 
 const updateInput = (event: Event) => {
   const target = event.target as HTMLInputElement;
-  if (props["onUpdate:value"]) {
-    props["onUpdate:value"](target.value);
-  } else {
-    innerValue.value = target.value;
-  }
+
+  emits("update:value", target.value);
+  innerValue.value = target.value;
 
   if (errorMessages.value.length) registerField?.revalidate();
 };
@@ -79,6 +80,7 @@ const currentState = computed(() => {
       v-bind="$attrs"
       :value="innerValue"
       :name="name"
+      :type="type"
       class="input"
       placeholder=" "
       @input="updateInput"

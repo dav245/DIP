@@ -1,18 +1,18 @@
-.login-form {
+.register-form {
   display: grid;
   grid-template-columns: 1fr;
   gap: space-y() space-x();
   margin-bottom: space-y();
 }
 
-.login-submit {
+.register-submit {
   width: 100%;
   display: block;
   margin-left: auto;
   text-align: center;
 }
 
-.login-submit-wrapper {
+.register-submit-wrapper {
   display: flex;
   align-items: center;
   flex-direction: column-reverse;
@@ -21,13 +21,25 @@
 }
 
 @include sm {
-  .login-form {
+  .register-form {
     grid-template-columns: 1fr 1fr;
   }
-  .login-submit {
+  .register-form > *:first-child {
+    grid-column: span 2;
+  }
+  .register-submit {
     width: auto;
   }
-  .login-submit-wrapper {
+  .register-submit-wrapper {
     flex-direction: row;
+  }
+}
+
+@include md {
+  .register-form {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .register-form > *:first-child {
+    grid-column: 1;
   }
 }

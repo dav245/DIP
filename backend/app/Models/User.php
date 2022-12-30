@@ -40,7 +40,7 @@ class User extends Authenticatable
         return Auth::user();
     }
 
-    public static function findByNickname(string $nickname): self
+    public static function findByNickname(string $nickname): ?self
     {
         return User::where('nickname', $nickname)->first();
     }

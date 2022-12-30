@@ -1,0 +1,12 @@
+{
+  "name": "dip",
+  "version": "1.0.0",
+  "scripts": {
+    "fetch-routes": "ts-node ./api/updateRoutes.ts"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0",
+    "ts-node": "^10.9.1"
+  },
+  "type": "module"
+}

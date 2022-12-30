@@ -13,7 +13,10 @@ class RouteController extends Controller
 
         return collect($routes)->mapWithKeys(function (RoutingRoute $route) {
             return [
-                $route->getName() => $route->uri()
+                $route->getName() => [
+                    'url' => $route->uri(),
+                    'method' => $route->methods()[0]
+                ]
             ];
         });
     }

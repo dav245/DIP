@@ -14,12 +14,30 @@
     4px 4px 8px rgba(var(--v-border-primary), 0.4);
 }
 
+.card__error {
+  --v-background-secondary: 255, 243, 243;
+  --v-border-primary: 220, 170, 170;
+}
+.card__success {
+  --v-background-secondary: 240, 255, 240;
+  --v-border-primary: 180, 230, 180;
+}
+
 .card-header {
+  display: flex;
+  align-items: center;
+
   border-bottom: 1px solid rgb(var(--v-border-primary));
   margin: 0 calc(-1 * var(--v-card-spacing-x)) var(--v-card-spacing-y)
     calc(-1 * var(--v-card-spacing-x));
   padding: 0 var(--v-card-spacing-x) var(--v-card-spacing-y)
     var(--v-card-spacing-x);
+}
 
+.card-header > .header {
   font-size: calc(1.5 * var(--v-font-size));
+}
+
+.card-header-toolbox {
+  margin-left: auto;
 }

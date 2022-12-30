@@ -4,8 +4,10 @@ import {
   ValidationField,
   validationFieldsKey,
   validationStateKey,
-} from "@/common/ts/validation/validateFields";
+} from "@common/ts/validation/validateFields";
 import { ref, provide } from "vue";
+
+const props = defineProps<{ submit: () => void }>();
 
 const submitTried = ref(false);
 const isInvalid = ref(false);
@@ -16,6 +18,8 @@ const validate = async () => {
   const isValid = await validateFields(fields.value);
 
   isInvalid.value = !isValid;
+
+  return isValid;
 };
 
 provide(validationFieldsKey, {
@@ -27,14 +31,18 @@ provide(validationFieldsKey, {
 
 provide(validationStateKey, { submitTried, isInvalid });
 
-const submit = async (event: Event) => {
+const submitForm = async (event: Event) => {
   submitTried.value = true;
-  await validate();
+
+  const isValid = await validate();
+  if (!isValid) return;
+
+  props.submit();
 };
 </script>
 
 <template>
-  <form @submit.prevent="submit" novalidate>
+  <form @submit.prevent="submitForm" novalidate>
     <slot />
   </form>
 </template>

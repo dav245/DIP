@@ -1,0 +1,8 @@
+.link {
+  text-decoration: underline;
+  color: rgb(var(--v-text-primary));
+}
+
+.link:focus {
+  text-shadow: 0px 0px 1px rgb(var(--v-text-primary));
+}

@@ -12,19 +12,11 @@
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "noEmit": true,
-    "paths": {
-      "@common/*": ["../common/*"],
-      "@c/*": ["src/components/*"],
-      "@p/*": ["src/pages/*"],
-      "@/*": ["src/*"]
-    }
+    "noEmit": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "../common/**/*.ts"
-  ]
+  "include": ["api/**/*.ts", "validation/**/*.ts"],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  }
 }

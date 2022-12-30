@@ -4,6 +4,9 @@
       "path": "."
     },
     {
+      "path": "common"
+    },
+    {
       "path": "backend"
     },
     {
@@ -12,6 +15,7 @@
   ],
   "settings": {
     "i18n-ally.localesPaths": ["backend/lang"],
-    "cSpell.words": ["Thessenger"]
+    "cSpell.words": ["Thessenger"],
+    "typescript.preferences.importModuleSpecifier": "shortest"
   }
 }

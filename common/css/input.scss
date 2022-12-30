@@ -13,6 +13,11 @@
   box-shadow: 2px 2px 8px rgba(var(--v-border-primary), 0.2);
 }
 
+.input:focus {
+  outline: 2px solid rgb(var(--v-border-primary));
+  outline-offset: 0px;
+}
+
 .label {
   position: absolute;
   display: flex;

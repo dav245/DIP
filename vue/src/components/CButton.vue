@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { validationStateKey } from "@/common/ts/validation/validateFields";
+import { validationStateKey } from "@common/ts/validation/validateFields";
 import { inject, computed, Ref } from "vue";
 
 const props = defineProps<{
   color?: "primary" | "secondary" | "success" | "error";
+  size?: "small" | "large";
 }>();
 
 const validationStatus = inject<{
@@ -23,7 +24,10 @@ const currentColor = computed(() => {
   <button
     v-bind="$attrs"
     class="button"
-    :class="{ [`button__${currentColor}`]: currentColor }"
+    :class="{
+      [`button__${currentColor}`]: currentColor,
+      [`button__${size}`]: size,
+    }"
   >
     <slot />
   </button>
