@@ -20,7 +20,7 @@ class MessageUpdateTest extends TestCase
         $this->user = User::factory()->create();
         $this->other = User::factory()->create();
         $this->message = Message::factory()->create([
-            'owner_id' => $this->user->id,
+            'user_id' => $this->user->id,
             'type' => MessageType::DRAFT()
         ]);
     }
@@ -39,13 +39,18 @@ class MessageUpdateTest extends TestCase
 
         $this->assertDatabaseHas('messages', [
             'id' => $this->message->id,
-            'subject' => 'subject',
-            'content' => 'content',
             'type' => MessageType::DRAFT()
         ]);
 
-        $this->assertDatabaseHas('message_user', [
-            'message_id' => $this->message->id,
+        $this->assertDatabaseHas('message_contents', [
+            'id' => $this->message->message_content_id,
+            'subject' => 'subject',
+            'content' => 'content',
+            'user_id' => $this->user->id
+        ]);
+
+        $this->assertDatabaseHas('message_content_user', [
+            'message_content_id' => $this->message->message_content_id,
             'user_id' => $this->other->id,
         ]);
     }
@@ -65,13 +70,18 @@ class MessageUpdateTest extends TestCase
 
         $this->assertDatabaseHas('messages', [
             'id' => $this->message->id,
-            'subject' => 'subject',
-            'content' => 'content',
             'type' => MessageType::SENT()
         ]);
 
-        $this->assertDatabaseHas('message_user', [
-            'message_id' => $this->message->id,
+        $this->assertDatabaseHas('message_contents', [
+            'id' => $this->message->message_content_id,
+            'subject' => 'subject',
+            'content' => 'content',
+            'user_id' => $this->user->id
+        ]);
+
+        $this->assertDatabaseHas('message_content_user', [
+            'message_content_id' => $this->message->message_content_id,
             'user_id' => $this->other->id,
         ]);
     }

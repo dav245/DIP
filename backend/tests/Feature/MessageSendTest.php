@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Enums\MessageType;
 use App\Models\Message;
+use App\Models\MessageContent;
 use App\Models\User;
 use Tests\TestCase;
 
@@ -20,10 +21,10 @@ class MessageSendTest extends TestCase
         $this->user = User::factory()->create();
         $this->otherUser = User::factory()->create();
         $this->message = Message::factory()->create([
-            'owner_id' => $this->user->id,
+            'user_id' => $this->user->id,
             'type' => MessageType::DRAFT()
         ]);
-        $this->message->recipients()->sync([$this->otherUser->id]);
+        $this->message->messageContent->recipients()->sync([$this->otherUser->id]);
     }
 
     public function test_user_can_send_own_message()
@@ -41,8 +42,8 @@ class MessageSendTest extends TestCase
 
         $this->assertDatabaseHas('messages', [
             'type' => MessageType::RECEIVED(),
-            'owner_id' => $this->otherUser->id,
-            'sent_from_id' => $this->user->id
+            'user_id' => $this->otherUser->id,
+            'message_content_id' => $this->message->message_content_id,
         ]);
     }
 

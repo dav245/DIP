@@ -33,13 +33,18 @@ class MessageStoreTest extends TestCase
 
         $this->assertDatabaseHas('messages', [
             'id' => $response->json('id'),
-            'subject' => 'subject',
-            'content' => 'content',
-            'type' => MessageType::DRAFT()->type()
+            'type' => MessageType::DRAFT()
         ]);
 
-        $this->assertDatabaseHas('message_user', [
-            'message_id' => $response->json('id'),
+        $this->assertDatabaseHas('message_contents', [
+            'id' => $response->json('message_content_id'),
+            'subject' => 'subject',
+            'content' => 'content',
+            'user_id' => $this->user->id
+        ]);
+
+        $this->assertDatabaseHas('message_content_user', [
+            'message_content_id' => $response->json('message_content_id'),
             'user_id' => $this->other1->id,
         ]);
 
@@ -59,13 +64,18 @@ class MessageStoreTest extends TestCase
 
         $this->assertDatabaseHas('messages', [
             'id' => $response->json('id'),
-            'subject' => 'subject',
-            'content' => 'content',
             'type' => MessageType::SENT()
         ]);
 
-        $this->assertDatabaseHas('message_user', [
-            'message_id' => $response->json('id'),
+        $this->assertDatabaseHas('message_contents', [
+            'id' => $response->json('message_content_id'),
+            'subject' => 'subject',
+            'content' => 'content',
+            'user_id' => $this->user->id
+        ]);
+
+        $this->assertDatabaseHas('message_content_user', [
+            'message_content_id' => $response->json('message_content_id'),
             'user_id' => $this->other1->id,
         ]);
     }
@@ -82,19 +92,22 @@ class MessageStoreTest extends TestCase
 
         $this->assertDatabaseHas('messages', [
             'id' => $response->json('id'),
-            'owner_id' => $this->user->id,
-            'subject' => 'subject',
-            'content' => 'content',
             'type' => MessageType::DRAFT()
         ]);
 
-        $this->assertDatabaseHas('message_user', [
-            'message_id' => $response->json('id'),
-            'user_id' => $this->other1->id,
+        $this->assertDatabaseHas('message_contents', [
+            'id' => $response->json('message_content_id'),
+            'subject' => 'subject',
+            'content' => 'content',
+            'user_id' => $this->user->id
         ]);
 
-        $this->assertDatabaseHas('message_user', [
-            'message_id' => $response->json('id'),
+        $this->assertDatabaseHas('message_content_user', [
+            'message_content_id' => $response->json('message_content_id'),
+            'user_id' => $this->other1->id,
+        ]);
+        $this->assertDatabaseHas('message_content_user', [
+            'message_content_id' => $response->json('message_content_id'),
             'user_id' => $this->other2->id,
         ]);
     }

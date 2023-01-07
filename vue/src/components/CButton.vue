@@ -7,10 +7,13 @@ const props = defineProps<{
   size?: "small" | "large";
 }>();
 
-const validationStatus = inject<{
-  submitTried: Ref<boolean>;
-  isInvalid: Ref<boolean>;
-}>(validationStateKey);
+const validationStatus = inject<
+  | {
+      submitTried: Ref<boolean>;
+      isInvalid: Ref<boolean>;
+    }
+  | undefined
+>(validationStateKey, undefined);
 
 const currentColor = computed(() => {
   if (validationStatus?.isInvalid.value) return "error";

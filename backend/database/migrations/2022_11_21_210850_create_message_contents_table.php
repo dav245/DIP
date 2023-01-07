@@ -13,18 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('messages', function (Blueprint $table) {
+        Schema::create('message_contents', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
 
-            $table->foreignId('message_content_id')->constrained()->restrictOnDelete()->cascadeOnUpdate();
+            $table->string('subject');
 
-            $table->string('type');
-
-            $table->dateTime('seen_at')->nullable();
-
-            $table->softDeletes();
+            $table->text('content');
 
             $table->timestamps();
         });
@@ -37,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('message_contents');
     }
 };

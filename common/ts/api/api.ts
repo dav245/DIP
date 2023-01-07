@@ -1,4 +1,3 @@
-import { ApiConfig } from "./config";
 import { getToken } from "./tokenStore";
 
 export type ApiCaller = <T>(call: () => T) => Promise<T>;
@@ -17,7 +16,7 @@ export const apiCall = async <T>(
   if (!currentApiCaller) throw Error("You forgot to set api caller!");
 
   const call = async () => {
-    const response = await fetch(ApiConfig.backendUrl + url, {
+    const response = await fetch(import.meta.env.VITE_BACKEND_URL + url, {
       method: method,
       headers: {
         "Content-Type": "Application/json",
@@ -57,4 +56,11 @@ export class ApiError extends Error {
 
     this.data = data;
   }
+}
+
+export interface Paginator<T> {
+  current_page: number;
+  per_page: number;
+  total: number;
+  data: T[];
 }

@@ -6,8 +6,10 @@ use App\Enums\MessageType;
 use App\Http\Requests\Message\CreateMessageRequest;
 use App\Http\Requests\Message\UpdateMessageRequest;
 use App\Models\Message;
+use App\Models\MessageContent;
 use App\Models\User;
 use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
 {
@@ -15,67 +17,73 @@ class MessageController extends Controller
     {
         $this->authorize('viewOwn', Message::class);
 
-        return Message::receivedMessages()->paginate();
+        return User::logged()->receivedMessages()->paginate();
     }
 
     public function sent(): Paginator
     {
         $this->authorize('viewOwn', Message::class);
 
-        return Message::sentMessages()
-            ->where('type', MessageType::SENT())
-            ->paginate();
+        return User::logged()->sentMessages()->paginate();
     }
 
     public function drafts(): Paginator
     {
         $this->authorize('viewOwn', Message::class);
 
-        return Message::sentMessages()
-            ->where('type', MessageType::DRAFT())
-            ->paginate();
+        return User::logged()->draftMessages()->paginate();
     }
 
     public function message(Message $message): Message
     {
         $this->authorize('view', $message);
 
-        return $message->load('recipients');
+        return $message->load('messageContent.recipients');
     }
 
     public function store(CreateMessageRequest $request): Message
     {
         $this->authorize('create', Message::class);
 
-        $message = Message::make($request->validated());
+        return DB::transaction(function () use ($request) {
 
-        $message->owner()->associate(User::logged());
-        $message->type = MessageType::DRAFT();
+            $messageContent = MessageContent::create(array_merge(
+                $request->only(['content', 'subject']),
+                ['user_id' => User::logged()->id]
+            ));
 
-        $message->save();
+            $messageContent->recipients()->sync($request->recipients);
 
-        $message->recipients()->sync($request->recipients);
+            $message = Message::create([
+                'user_id' => User::logged()->id,
+                'type' => MessageType::DRAFT(),
+                'message_content_id' => $messageContent->id
+            ]);
 
-        if ($request->send) {
-            $message->send();
-        }
+            if ($request->send) {
+                $message->send();
+            }
 
-        return $message;
+            return $message;
+        });
     }
 
     public function update(UpdateMessageRequest $request, Message $message): Message
     {
         $this->authorize('update', $message);
 
-        $message->update($request->validated());
+        return DB::transaction(function () use ($request, $message) {
 
-        $message->recipients()->sync($request->recipients);
+            $message->messageContent()->update($request->only(['subject', 'content']));
 
-        if ($request->send) {
-            $message->send();
-        }
+            $message->messageContent->recipients()->sync($request->recipients);
 
-        return $message;
+            if ($request->send) {
+                $message->send();
+            }
+
+            return $message;
+        });
     }
 
     public function send(Message $message): Message

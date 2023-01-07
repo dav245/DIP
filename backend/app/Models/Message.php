@@ -5,54 +5,44 @@ namespace App\Models;
 use App\Casts\MessageTypeCast;
 use App\Enums\MessageType;
 use App\Traits\HasBaseTypings;
-use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Support\Collection;
 
 /**
- * @property string $subject
- * @property string $content
- * @property number $owner_id
+ * @property number $user_id
+ * @property number $message_content_id
  * @property MessageType $type
- * @property User $owner
- * @property User|null $sentFrom
- * @property Collection $recipients
+ * @property MessageContent $messageContent
+ * @property User $user
  */
 class Message extends Model
 {
     use HasFactory, HasBaseTypings;
 
     protected $fillable = [
-        'subject',
-        'content',
-        'type'
+        'type',
+        'user_id',
+        'message_content_id'
     ];
 
     protected $casts = [
         'type' => MessageTypeCast::class
     ];
 
-    public function owner(): BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function sentFrom(): BelongsTo
+    public function messageContent(): BelongsTo
     {
-        return $this->belongsTo(User::class);
-    }
-
-    public function recipients(): BelongsToMany
-    {
-        return $this->belongsToMany(User::class, 'message_user');
+        return $this->belongsTo(MessageContent::class);
     }
 
     public function isSentBy(User $other): bool
     {
-        return $this->owner_id === $other->id;
+        return $this->messageContent->user_id === $other->id;
     }
 
     public function send()
@@ -61,30 +51,14 @@ class Message extends Model
 
         $this->save();
 
-        $messages = $this->recipients->map(function (User $recipient) {
+        $messages = $this->messageContent->recipients->map(function (User $recipient) {
             return [
-                'owner_id' => $recipient->id,
-                'sent_from_id' => $this->owner->id,
-                'subject' => $this->subject,
-                'content' => $this->content,
+                'user_id' => $recipient->id,
+                'message_content_id' => $this->message_content_id,
                 'type' => MessageType::RECEIVED()
             ];
         })->toArray();
 
         Message::insert($messages);
-    }
-
-    public static function receivedMessages(): Builder
-    {
-        return static::query()
-            ->where('owner_id', User::logged()->id)
-            ->where('type', MessageType::RECEIVED());
-    }
-
-    public static function sentMessages(): Builder
-    {
-        return static::query()
-            ->where('owner_id', User::logged()->id)
-            ->whereNull('sent_from_id');
     }
 }

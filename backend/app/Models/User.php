@@ -19,6 +19,7 @@ use Laravel\Sanctum\HasApiTokens;
  * @property string $password
  * 
  * @property Collection $sentMessages
+ * @property Collection $receivedMessages
  */
 class User extends Authenticatable
 {
@@ -47,11 +48,16 @@ class User extends Authenticatable
 
     public function sentMessages(): HasMany
     {
-        return $this->hasMany(Message::class, 'owner_id')->whereNull('sent_from_id');
+        return $this->hasMany(Message::class, 'user_id')->where('type', MessageType::SENT());
+    }
+
+    public function draftMessages(): HasMany
+    {
+        return $this->hasMany(Message::class, 'user_id')->where('type', MessageType::DRAFT());
     }
 
     public function receivedMessages(): HasMany
     {
-        return $this->hasMany(Message::class, 'owner_id')->where('type', MessageType::RECEIVED());
+        return $this->hasMany(Message::class, 'user_id')->where('type', MessageType::RECEIVED());
     }
 }

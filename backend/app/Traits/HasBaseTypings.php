@@ -24,7 +24,6 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
  * @method static \Illuminate\Database\Eloquent\Model forceCreate(array $attributes)
  * @method static \Illuminate\Contracts\Pagination\LengthAwarePaginator paginate($perPage = 15, $columns = ['*'],$pageName= 'page', $page = null)
  * @method static int update(array $values)
- * @method static \Database\Factories\BaseFactory<static> factory(... $params)
  *
  * @method \Illuminate\Database\Eloquent\Builder whereKey($id)
  * @method \Illuminate\Database\Eloquent\Builder whereKeyNot($id)

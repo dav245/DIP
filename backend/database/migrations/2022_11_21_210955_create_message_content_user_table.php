@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('message_user', function (Blueprint $table) {
+        Schema::create('message_content_user', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('message_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('message_content_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->timestamps();
 
-            $table->unique(['user_id', 'message_id']);
+            $table->unique(['user_id', 'message_content_id']);
         });
     }
 
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('messages');
+        Schema::dropIfExists('message_content_user');
     }
 };

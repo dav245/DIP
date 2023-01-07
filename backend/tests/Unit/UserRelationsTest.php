@@ -12,7 +12,7 @@ class UserRelationsTest extends TestCase
     public function test_received_messages_relation_works()
     {
         $user = User::factory()->create();
-        $message = Message::factory()->create(['owner_id' => $user->id, 'type' => MessageType::RECEIVED()]);
+        $message = Message::factory()->create(['user_id' => $user->id, 'type' => MessageType::RECEIVED()]);
 
         $this->assertEquals($message->id, $user->receivedMessages->first()->id);
     }

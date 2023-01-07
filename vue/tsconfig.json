@@ -25,6 +25,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "../common/**/*.ts"
+    "../common/**/*.ts",
+    "../env.d.ts"
   ]
 }

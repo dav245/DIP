@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Enums\MessageType;
 use App\Models\Message;
+use App\Models\MessageContent;
 use App\Models\User;
 use Tests\TestCase;
 
@@ -23,21 +24,21 @@ class MessageSentTest extends TestCase
         $this->user = User::factory()->create();
         $this->other = User::factory()->create();
         $this->messageReceived = Message::factory()->create([
-            'owner_id' => $this->user->id,
-            'sent_from_id' => $this->other->id,
+            'user_id' => $this->user->id,
+            'message_content_id' => MessageContent::factory()->state(['user_id' =>  $this->other->id]),
             'type' => MessageType::RECEIVED()
         ]);
         $this->messageDraft = Message::factory()->create([
-            'owner_id' => $this->user->id,
+            'user_id' => $this->user->id,
             'type' => MessageType::DRAFT()
         ]);
         $this->messageSent = Message::factory()->create([
-            'owner_id' => $this->user->id,
+            'user_id' => $this->user->id,
             'type' => MessageType::SENT()
         ]);
         $this->otherMessage = Message::factory()->create([
-            'owner_id' => $this->other->id,
-            'sent_from_id' => $this->user->id,
+            'user_id' => $this->other->id,
+            'message_content_id' => MessageContent::factory()->state(['user_id' =>  $this->other->id]),
             'type' => MessageType::SENT()
         ]);
     }

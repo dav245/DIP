@@ -20,7 +20,7 @@ class MessageDetailTest extends TestCase
         $this->user = User::factory()->create();
         $this->other = User::factory()->create();
         $this->message = Message::factory()->create([
-            'owner_id' => $this->user->id,
+            'user_id' => $this->user->id,
             'type' => MessageType::DRAFT()
         ]);
     }

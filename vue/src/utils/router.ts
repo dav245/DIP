@@ -28,6 +28,21 @@ const routes: RouteRecordRaw[] = [
     name: "home",
     component: () => import("@p/Home.vue"),
   },
+  {
+    path: "/inbox",
+    name: "inbox",
+    component: () => import("@p/Inbox.vue"),
+  },
+  {
+    path: "/outbox",
+    name: "outbox",
+    component: () => import("@p/Inbox.vue"),
+  },
+  {
+    path: "/trash",
+    name: "trash",
+    component: () => import("@p/Inbox.vue"),
+  },
   ...getDesignerRoutes(),
 ];
 

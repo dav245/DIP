@@ -14,7 +14,7 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["api/**/*.ts", "validation/**/*.ts"],
+  "include": ["api/**/*.ts", "validation/**/*.ts", "../../env.d.ts"],
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node"

@@ -4,6 +4,7 @@ import { createApp } from "vue";
 import { registerRouter } from "@/utils/router";
 import { setApiCaller, ApiError } from "@common/ts/api/api";
 import { showMessage } from "./utils/messages";
+import { loadToken } from "@common/ts/api/tokenStore";
 
 setApiCaller(async (call) => {
   try {
@@ -20,6 +21,8 @@ setApiCaller(async (call) => {
     throw ex;
   }
 });
+
+loadToken();
 
 const app = createApp(App);
 

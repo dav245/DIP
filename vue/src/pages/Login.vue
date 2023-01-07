@@ -7,6 +7,7 @@ import CButton from "@/components/CButton.vue";
 import { ref } from "vue";
 import { login, LoginPayload } from "@common/ts/api/login";
 import { useRouter } from "vue-router";
+import { useStore } from "@/utils/store";
 
 const form = ref<LoginPayload>({
   nickname: "",
@@ -14,12 +15,14 @@ const form = ref<LoginPayload>({
   device_name: "vue",
 });
 
+const store = useStore();
 const router = useRouter();
 
 const submit = async () => {
   const response = await login(form.value);
 
   if (response) {
+    store.isLoggedIn.value = true;
     router.push({ name: "home" });
   }
 };

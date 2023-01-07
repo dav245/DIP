@@ -37,10 +37,13 @@ const registerField = inject<{
 }>(validationFieldsKey);
 registerField?.register(field);
 
-const validationStatus = inject<{
-  submitTried: Ref<boolean>;
-  isInvalid: Ref<boolean>;
-}>(validationStateKey);
+const validationStatus = inject<
+  | {
+      submitTried: Ref<boolean>;
+      isInvalid: Ref<boolean>;
+    }
+  | undefined
+>(validationStateKey, undefined);
 
 watch(
   () => props.value,

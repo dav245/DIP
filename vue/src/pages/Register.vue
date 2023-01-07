@@ -9,6 +9,7 @@ import { register, RegisterPayload } from "@common/ts/api/register";
 import { passwordConfirmRule } from "@common/ts/validation/passwordConfirm";
 import { getPasswordRules } from "@common/ts/validation/password";
 import { useRouter } from "vue-router";
+import { useStore } from "@/utils/store";
 
 const form = ref<RegisterPayload>({
   nickname: "",
@@ -18,12 +19,14 @@ const form = ref<RegisterPayload>({
 
 const passwordConfirm = ref("");
 
+const store = useStore();
 const router = useRouter();
 
 const submit = async () => {
   const response = await register(form.value);
 
   if (response) {
+    store.isLoggedIn.value = true;
     router.push({ name: "home" });
   }
 };
