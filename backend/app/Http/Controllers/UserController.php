@@ -10,4 +10,13 @@ class UserController extends Controller
     {
         return User::logged();
     }
+
+    public function recipients(): array
+    {
+        $items =  User::query()
+            ->select(['nickname as label', 'id as value'])
+            ->get();
+
+        return ['items' => $items];
+    }
 }

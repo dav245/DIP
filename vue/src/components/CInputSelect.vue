@@ -15,7 +15,7 @@ const props = defineProps<{
   label?: string;
   state?: "success" | "error";
   required?: boolean;
-  value?: string;
+  value?: (string | number)[] | string | number;
   rules?: RuleType[];
   multiple?: boolean;
 }>();
@@ -94,6 +94,8 @@ const close = () => {
 };
 
 const selectItem = (item: SelectItem) => {
+  if (item.disabled) return;
+
   if (Array.isArray(innerValue.value)) {
     if (isSelected(item)) {
       innerValue.value = innerValue.value.filter((i) => i !== item.value);
@@ -126,11 +128,14 @@ onUnmounted(() => {
   document.removeEventListener("keydown", onKeydownEvent);
 });
 
-const formattedInnerValue = computed(() =>
-  Array.isArray(innerValue.value)
-    ? innerValue.value.join(", ")
-    : innerValue.value
-);
+const formattedInnerValue = computed(() => {
+  const getLabel = (value: string | number) =>
+    props.items.find((item) => item.value === value)?.label;
+
+  return Array.isArray(innerValue.value)
+    ? innerValue.value.map(getLabel).join(", ")
+    : getLabel(innerValue.value);
+});
 
 const filteredItems = computed(() =>
   props.items.filter((item) => item.label.includes(search.value))
@@ -167,7 +172,7 @@ const filteredItems = computed(() =>
         </li>
         <li
           v-for="(item, index) in filteredItems"
-          :class="{ selected: isSelected(item) }"
+          :class="{ selected: isSelected(item), disabled: item.disabled }"
           :tabindex="0"
           @click.stop="selectItem(item)"
           @keydown.enter="selectItem(item)"

@@ -3,6 +3,7 @@ export const routes = {"sanctum.csrf-cookie": {url: () => `/sanctum/csrf-cookie`
 "ignition.executeSolution": {url: () => `/_ignition/execute-solution`, method: "POST"},
 "ignition.updateConfig": {url: () => `/_ignition/update-config`, method: "POST"},
 "user.self": {url: () => `/api/user/self`, method: "GET"},
+"user.recipients": {url: () => `/api/user/recipients`, method: "GET"},
 "message.received": {url: () => `/api/message/messages/received`, method: "GET"},
 "message.sent": {url: () => `/api/message/messages/sent`, method: "GET"},
 "message.drafts": {url: () => `/api/message/messages/drafts`, method: "GET"},

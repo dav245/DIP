@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
         ->name('user.')
         ->group(function () {
             Route::get('self', 'self')->name('self');
+            Route::get('recipients', 'recipients')->name('recipients');
         });
 
     Route::controller(MessageController::class)

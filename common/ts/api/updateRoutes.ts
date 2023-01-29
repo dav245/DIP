@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 import { writeFileSync } from "fs";
 
 const fetchData = async () => {
-  const response = await fetch("127.0.0.1:8000/api/route/routes", {
+  const response = await fetch("http://127.0.0.1:8000/api/route/routes", {
     method: "GET",
     headers: {
       "Content-Type": "Application/json",

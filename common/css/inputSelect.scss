@@ -25,6 +25,8 @@
 }
 
 .input-select-items > ul {
+  max-height: 400px;
+  overflow: auto;
   border: 3px solid rgb(var(--v-border-primary));
   border-top-width: 1px;
   margin: -2px;

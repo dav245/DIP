@@ -2,48 +2,55 @@
 import CForm from "@/components/CForm.vue";
 import CCard from "@/components/CCard.vue";
 import CInput from "@/components/CInput.vue";
-import CLink from "@/components/CLink.vue";
+import CRecipientSelect from "@/components/CRecipientSelect.vue";
 import CButton from "@/components/CButton.vue";
 import { ref } from "vue";
-import { login, LoginPayload } from "@common/ts/api/login";
 import { useRouter } from "vue-router";
 import { useStore } from "@/utils/store";
+import {
+  createMessage,
+  CreateMessagePayload,
+} from "@common/ts/api/createMessage";
 
-const form = ref<LoginPayload>({
-  nickname: "",
-  password: "",
-  device_name: "vue",
+const form = ref<CreateMessagePayload>({
+  recipients: [],
+  subject: "",
+  content: "",
+  send: true,
 });
 
 const store = useStore();
 const router = useRouter();
 
 const submit = async () => {
-  const response = await login(form.value);
-
-  if (response) {
-    store.isLoggedIn.value = true;
-    router.push({ name: "newMessage" });
-  }
+  const response = await createMessage(form.value);
 };
 </script>
 
 <template>
   <c-card title="Naspat novou zprávu">
     <c-form :submit="submit">
-      <c-input
-        v-model:value="form.nickname"
+      <c-recipient-select
+        v-model:value="form.recipients"
         required
-        label="Přezdívka"
-        name="nickname"
+        label="Komu"
+        name="recipients"
       />
       <c-input
-        v-model:value="form.password"
+        v-model:value="form.subject"
         required
-        label="Heslo"
-        name="password"
+        label="Předmět"
+        name="subject"
+      />
+      <c-input
+        v-model:value="form.content"
+        required
+        label="Obsah"
+        name="content"
         type="textarea"
       />
+
+      <c-button color="success">Odeslat</c-button>
     </c-form>
   </c-card>
 </template>
