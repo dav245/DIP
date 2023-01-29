@@ -7,7 +7,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     name: "designer",
     component: () => import("./Main.vue"),
     meta: {
-      guest: true,
+      any: true,
       layout: () => GuestLayout,
     },
   },
@@ -17,7 +17,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     name: "designerCard",
     component: () => import("./Card.vue"),
     meta: {
-      guest: true,
+      any: true,
       layout: () => GuestLayout,
     },
   },
@@ -27,7 +27,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     name: "designerInput",
     component: () => import("./Input.vue"),
     meta: {
-      guest: true,
+      any: true,
       layout: () => GuestLayout,
     },
   },
@@ -37,7 +37,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     name: "designerButton",
     component: () => import("./Button.vue"),
     meta: {
-      guest: true,
+      any: true,
       layout: () => GuestLayout,
     },
   },
@@ -47,7 +47,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     name: "designerMessages",
     component: () => import("./Messages.vue"),
     meta: {
-      guest: true,
+      any: true,
       layout: () => GuestLayout,
     },
   },
@@ -57,7 +57,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     name: "designerInputSelect",
     component: () => import("./InputSelect.vue"),
     meta: {
-      guest: true,
+      any: true,
       layout: () => GuestLayout,
     },
   },

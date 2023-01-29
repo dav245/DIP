@@ -58,7 +58,9 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const { isLoggedIn } = useStore();
 
-  if (isLoggedIn.value && to.meta.guest) {
+  if (to.meta.any) {
+    next();
+  } else if (isLoggedIn.value && to.meta.guest) {
     next({ name: "newMessage" });
   } else if (!isLoggedIn.value && !to.meta.guest) {
     next({ name: "login" });
