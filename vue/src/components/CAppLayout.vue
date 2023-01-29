@@ -2,7 +2,7 @@
 import { useStore } from "@/utils/store";
 import { logout } from "@common/ts/api/logout";
 import CButton from "./CButton.vue";
-import MainMenu from "./MainMenu.vue";
+import CMainMenu from "./CMainMenu.vue";
 import { useRouter } from "vue-router";
 
 const store = useStore();
@@ -30,7 +30,7 @@ const links = [
       </c-button>
     </div>
     <div class="app-layout-sidebar">
-      <main-menu />
+      <c-main-menu />
     </div>
     <div class="app-layout-content">
       <router-view></router-view>

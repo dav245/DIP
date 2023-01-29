@@ -1,4 +1,4 @@
-import GuestLayout from "@/components/GuestLayout.vue";
+import CGuestLayout from "@c/CGuestLayout.vue";
 import { RouteRecordRaw } from "vue-router";
 
 export const getDesignerRoutes = (): RouteRecordRaw[] => [
@@ -8,7 +8,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     component: () => import("./Main.vue"),
     meta: {
       any: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
 
@@ -18,7 +18,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     component: () => import("./Card.vue"),
     meta: {
       any: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
 
@@ -28,7 +28,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     component: () => import("./Input.vue"),
     meta: {
       any: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
 
@@ -38,7 +38,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     component: () => import("./Button.vue"),
     meta: {
       any: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
 
@@ -48,7 +48,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     component: () => import("./Messages.vue"),
     meta: {
       any: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
 
@@ -58,7 +58,7 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
     component: () => import("./InputSelect.vue"),
     meta: {
       any: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
 ];

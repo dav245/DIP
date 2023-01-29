@@ -1,4 +1,4 @@
-import GuestLayout from "@/components/GuestLayout.vue";
+import CGuestLayout from "@c/CGuestLayout.vue";
 import { getDesignerRoutes } from "@/designer/routes";
 import { useStore } from "@/utils/store";
 import { App } from "vue";
@@ -11,7 +11,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@p/Login.vue"),
     meta: {
       guest: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
   {
@@ -20,7 +20,7 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@p/Register.vue"),
     meta: {
       guest: true,
-      layout: () => GuestLayout,
+      layout: () => CGuestLayout,
     },
   },
   {
