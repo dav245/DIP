@@ -60,4 +60,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Message::class, 'user_id')->where('type', MessageType::RECEIVED());
     }
+
+    public function deletedMessages(): HasMany
+    {
+        return $this->hasMany(Message::class, 'user_id')->onlyTrashed();
+    }
 }

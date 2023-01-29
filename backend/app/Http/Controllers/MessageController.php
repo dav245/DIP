@@ -8,37 +8,65 @@ use App\Http\Requests\Message\UpdateMessageRequest;
 use App\Models\Message;
 use App\Models\MessageContent;
 use App\Models\User;
-use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
 {
-    public function received(): Paginator
+    public function received(): array
     {
         $this->authorize('viewOwn', Message::class);
 
-        return User::logged()->receivedMessages()->paginate();
+        return [
+            'messages' => User::logged()
+                ->receivedMessages()
+                ->with(['messageContent.user', 'messageContent.recipients'])
+                ->get()
+        ];
     }
 
-    public function sent(): Paginator
+    public function sent(): array
     {
         $this->authorize('viewOwn', Message::class);
 
-        return User::logged()->sentMessages()->paginate();
+        return [
+            'messages' => User::logged()
+                ->sentMessages()
+                ->with(['messageContent.user', 'messageContent.recipients'])
+                ->get()
+        ];
     }
 
-    public function drafts(): Paginator
+    public function drafts(): array
     {
         $this->authorize('viewOwn', Message::class);
 
-        return User::logged()->draftMessages()->paginate();
+        return [
+            'messages' => User::logged()
+                ->draftMessages()
+                ->with(['messageContent.user', 'messageContent.recipients'])
+                ->get()
+        ];
     }
 
-    public function message(Message $message): Message
+    public function deleted(): array
+    {
+        $this->authorize('viewOwn', Message::class);
+
+        return [
+            'messages' => User::logged()
+                ->deletedMessages()
+                ->with(['messageContent.user', 'messageContent.recipients'])
+                ->get()
+        ];
+    }
+
+    public function message(Message $message): array
     {
         $this->authorize('view', $message);
 
-        return $message->load('messageContent.recipients');
+        $message->load('messageContent.recipients', 'messageContent.user');
+
+        return ['message' => $message];
     }
 
     public function store(CreateMessageRequest $request): Message
@@ -95,12 +123,14 @@ class MessageController extends Controller
         return $message;
     }
 
-    public function delete(Message $message): int
+    public function delete(Message $message): array
     {
         $this->authorize('delete', $message);
 
-        $message->delete();
+        $message->trashed()
+            ? $message->forceDelete()
+            : $message->delete();
 
-        return 1;
+        return ['deleted' => true];
     }
 }

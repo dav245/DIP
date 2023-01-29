@@ -8,6 +8,7 @@ use App\Traits\HasBaseTypings;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property number $user_id
@@ -18,7 +19,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Message extends Model
 {
-    use HasFactory, HasBaseTypings;
+    use HasFactory, HasBaseTypings, SoftDeletes;
 
     protected $fillable = [
         'type',
@@ -42,7 +43,7 @@ class Message extends Model
 
     public function isSentBy(User $other): bool
     {
-        return $this->messageContent->user_id === $other->id;
+        return $this->user_id === $other->id;
     }
 
     public function send()

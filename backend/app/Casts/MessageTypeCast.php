@@ -18,7 +18,7 @@ class MessageTypeCast implements CastsAttributes
      */
     public function get($model, string $key, $value, array $attributes)
     {
-        return collect(MessageType::values())->first(fn (MessageType $type) => $type->type() === $value);
+        return collect(MessageType::values())->first(fn (MessageType $type) => $type->type() === $value)->type();
     }
 
     /**

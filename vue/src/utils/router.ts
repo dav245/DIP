@@ -29,6 +29,12 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@p/NewMessage.vue"),
   },
   {
+    path: "/message/:messageId/detail",
+    name: "messageDetail",
+    component: () => import("@p/MessageDetail.vue"),
+    props: true,
+  },
+  {
     path: "/inbox",
     name: "inbox",
     component: () => import("@p/Inbox.vue"),
@@ -36,12 +42,12 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/outbox",
     name: "outbox",
-    component: () => import("@p/Inbox.vue"),
+    component: () => import("@p/Outbox.vue"),
   },
   {
     path: "/trash",
     name: "trash",
-    component: () => import("@p/Inbox.vue"),
+    component: () => import("@p/Trash.vue"),
   },
   ...getDesignerRoutes(),
   {

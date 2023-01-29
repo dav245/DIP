@@ -33,11 +33,12 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get('messages/received', 'received')->name('received');
             Route::get('messages/sent', 'sent')->name('sent');
             Route::get('messages/drafts', 'drafts')->name('drafts');
-            Route::get('message/{message}', 'message')->name('message');
+            Route::get('messages/deleted', 'deleted')->name('deleted');
+            Route::get('message/{message}', 'message')->name('message')->withTrashed();
             Route::put('message', 'store')->name('store');
             Route::post('message/{message}', 'update')->name('update');
             Route::post('message/{message}/send', 'send')->name('send');
-            Route::delete('message/{message}', 'delete')->name('delete');
+            Route::delete('message/{message}', 'delete')->name('delete')->withTrashed();
         });
 });
 

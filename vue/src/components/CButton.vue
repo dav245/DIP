@@ -4,7 +4,10 @@ import { inject, computed, Ref } from "vue";
 
 const props = defineProps<{
   color?: "primary" | "secondary" | "success" | "error";
-  size?: "small" | "large";
+  size?: "small" | "medium" | "large";
+  loading?: boolean;
+  disabled?: boolean;
+  onClick?: () => void;
 }>();
 
 const validationStatus = inject<
@@ -28,10 +31,14 @@ const currentColor = computed(() => {
     v-bind="$attrs"
     class="button"
     :class="{
+      button__disabled: disabled,
       [`button__${currentColor}`]: currentColor,
       [`button__${size}`]: size,
     }"
+    @click="disabled ? null : onClick?.()"
   >
     <slot />
+
+    <span v-if="loading" class="loader button-loader" />
   </button>
 </template>

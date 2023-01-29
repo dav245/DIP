@@ -25,6 +25,18 @@
   filter: brightness(0.95);
 }
 
+.button__disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.button__disabled:focus {
+  outline: unset;
+}
+.button__disabled:hover,
+.button__disabled:active {
+  filter: unset;
+}
+
 .button__success {
   --v-button-color: var(--v-success);
   --v-button-border-color: var(--v-border-success);
@@ -41,4 +53,13 @@
 .button__small {
   font-size: calc(var(--v-font-size) / 2);
   padding: var(--v-base-unit);
+}
+
+.button__medium {
+  font-size: calc(var(--v-font-size) / 1.25);
+  padding: calc(var(--v-base-unit) * 1.5);
+}
+
+.button-loader {
+  margin-left: space-x();
 }

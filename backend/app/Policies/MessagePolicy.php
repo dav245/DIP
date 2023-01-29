@@ -39,9 +39,6 @@ class MessagePolicy
 
     public function delete(User $user, Message $message): Response | bool
     {
-        return $message->isSentBy($user) && in_array($message->type, [
-            MessageType::DRAFT(),
-            MessageType::RECEIVED()
-        ]);
+        return $message->isSentBy($user);
     }
 }

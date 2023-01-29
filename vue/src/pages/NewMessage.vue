@@ -5,8 +5,6 @@ import CInput from "@/components/CInput.vue";
 import CRecipientSelect from "@/components/CRecipientSelect.vue";
 import CButton from "@/components/CButton.vue";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
-import { useStore } from "@/utils/store";
 import {
   createMessage,
   CreateMessagePayload,
@@ -19,9 +17,6 @@ const form = ref<CreateMessagePayload>({
   send: true,
 });
 
-const store = useStore();
-const router = useRouter();
-
 const submit = async () => {
   const response = await createMessage(form.value);
 };
@@ -29,7 +24,7 @@ const submit = async () => {
 
 <template>
   <c-card title="Naspat novou zprávu">
-    <c-form :submit="submit">
+    <c-form :submit="submit" class="new-message-form">
       <c-recipient-select
         v-model:value="form.recipients"
         required
@@ -50,7 +45,9 @@ const submit = async () => {
         type="textarea"
       />
 
-      <c-button color="success">Odeslat</c-button>
+      <c-button color="success" class="new-message-form-submit">
+        Odeslat
+      </c-button>
     </c-form>
   </c-card>
 </template>

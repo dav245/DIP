@@ -2,16 +2,24 @@
 import CMessageList from "@/components/CMessageList.vue";
 import CCard from "@/components/CCard.vue";
 import { ref, onMounted } from "vue";
-import { Message } from "@common/ts/api/message";
-import { getReceivedMessages } from "@common/ts/api/getReceivedMessages";
+import { Message, MessageType } from "@common/ts/api/message";
+import { getDeletedMessages } from "@common/ts/api/getDeletedMessages";
 
 const messages = ref<Message[]>([]);
 
-const showUser = (message: Message): string =>
-  message.message_content?.user?.nickname ?? "";
+const showUser = (message: Message): string => {
+  if (message.type === MessageType.TYPE_RECEIVED) {
+    return message.message_content?.user?.nickname ?? "";
+  }
+  return (
+    message.message_content?.recipients
+      ?.map((user) => user.nickname)
+      .join(", ") ?? ""
+  );
+};
 
 onMounted(async () => {
-  const response = await getReceivedMessages();
+  const response = await getDeletedMessages();
 
   if (response) {
     messages.value = response.messages;
@@ -24,7 +32,7 @@ const onDeleted = (messageId: string | number) => {
 </script>
 
 <template>
-  <c-card title="Seznam přijatých zpráv">
+  <c-card title="Seznam smazaných zpráv">
     <c-message-list
       :messages="messages"
       :show-user="showUser"

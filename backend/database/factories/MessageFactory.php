@@ -17,7 +17,7 @@ class MessageFactory extends Factory
         return [
             'type' => fake()->randomElement(MessageType::values()),
             'user_id' => User::factory(),
-            'message_content_id' => fn ($args) => MessageContent::factory()->state(['user_id' => $args['user_id']]),
+            'message_content_id' => fn ($args) => MessageContent::factory(),
         ];
     }
 }

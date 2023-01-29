@@ -1,14 +1,13 @@
-.main-menu {
-}
-
 .main-menu-item {
   position: relative;
   display: block;
   padding: space-y(0.5) space-x();
 }
+.main-menu > li > .main-menu-item {
+  text-decoration: unset;
+}
 .main-menu > li:not(:last-child) > .main-menu-item {
   border-bottom: 1px solid rgb(var(--v-border-primary));
-  text-decoration: unset;
 }
 .main-menu-item__active::before {
   content: "";

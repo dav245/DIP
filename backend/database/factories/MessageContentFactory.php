@@ -2,8 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Enums\MessageType;
-use App\Models\Message;
 use App\Models\MessageContent;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -20,5 +18,12 @@ class MessageContentFactory extends Factory
             'content' => fake()->realText(1200),
             'user_id' => User::factory(),
         ];
+    }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (MessageContent $content) {
+            $content->recipients()->sync(User::query()->inRandomOrder()->take(5)->pluck('id'));
+        });
     }
 }

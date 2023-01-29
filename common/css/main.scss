@@ -20,6 +20,7 @@
 @import "./reset.scss";
 @import "breakpoints.scss";
 @import "spacing.scss";
+@import "loader.scss";
 
 @import "guest-layout.scss";
 @import "app-layout.scss";
@@ -30,6 +31,9 @@
 @import "messages.scss";
 @import "link.scss";
 @import "main-menu.scss";
+@import "message-list.scss";
+@import "message-detail.scss";
+@import "new-message.scss";
 
 @import "login.scss";
 @import "register.scss";
@@ -44,10 +48,11 @@
 }
 
 html {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   font-size: var(--v-font-size);
   font-family: "Montserrat";
+  overflow-y: visible;
 }
 
 #app {

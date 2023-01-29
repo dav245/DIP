@@ -1,0 +1,9 @@
+.new-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: space-y() 0;
+}
+
+.new-message-form-submit {
+  align-self: flex-end;
+}

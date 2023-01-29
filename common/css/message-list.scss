@@ -1,0 +1,50 @@
+.message-list-item {
+  display: grid;
+  grid-template-areas:
+    "user date"
+    "subject action"
+    "content action";
+
+  grid-template-columns: 1fr auto;
+  padding: space-y() 0;
+}
+
+.message-list-item:last-child {
+  padding-bottom: 0;
+}
+
+.message-list-item:first-child {
+  padding-top: 0;
+}
+
+.message-list-item:not(:last-child) {
+  border-bottom: 1px solid rgb(var(--v-border-primary));
+}
+
+.message-list-item-user {
+  grid-area: user;
+  font-weight: bold;
+}
+
+.message-list-item-subject {
+  grid-area: subject;
+  margin: space-y(0.5) 0;
+}
+
+.message-list-item-date {
+  grid-area: date;
+  text-align: right;
+}
+
+.message-list-item-content {
+  grid-area: content;
+  color: rgba(var(--v-text-primary), 0.5);
+}
+
+.message-list-item-action {
+  grid-area: action;
+  display: flex;
+  align-items: flex-end;
+  gap: 0 space-x();
+  justify-content: end;
+}

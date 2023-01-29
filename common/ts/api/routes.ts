@@ -7,6 +7,7 @@ export const routes = {"sanctum.csrf-cookie": {url: () => `/sanctum/csrf-cookie`
 "message.received": {url: () => `/api/message/messages/received`, method: "GET"},
 "message.sent": {url: () => `/api/message/messages/sent`, method: "GET"},
 "message.drafts": {url: () => `/api/message/messages/drafts`, method: "GET"},
+"message.deleted": {url: () => `/api/message/messages/deleted`, method: "GET"},
 "message.message": {url: (message: string|number) => `/api/message/message/${message}`, method: "GET"},
 "message.store": {url: () => `/api/message/message`, method: "PUT"},
 "message.update": {url: (message: string|number) => `/api/message/message/${message}`, method: "POST"},
