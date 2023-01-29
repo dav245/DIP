@@ -1,17 +1,12 @@
 <script lang="ts" setup>
-import { MainMenu } from "@common/ts/api/mainMenu";
+import { getMainMenu, MainMenu } from "@common/ts/api/mainMenu";
 import CLink from "./CLink.vue";
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 
-const mainMenus = ref<MainMenu[]>([
-  { name: "Nová zpráva", routeName: "newMessage" },
-  { name: "Přijaté zprávy", routeName: "inbox" },
-  { name: "Odeslané zprávy", routeName: "outbox" },
-  { name: "Koš", routeName: "trash" },
-]);
+const mainMenus = ref<MainMenu[]>(getMainMenu());
 </script>
 
 <template>
