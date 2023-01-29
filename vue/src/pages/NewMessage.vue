@@ -29,30 +29,21 @@ const submit = async () => {
 </script>
 
 <template>
-  <c-card title="Přihlášení do systému Thessenger">
+  <c-card title="Naspat novou zprávu">
     <c-form :submit="submit">
-      <div class="login-form">
-        <c-input
-          v-model:value="form.nickname"
-          required
-          label="Přezdívka"
-          name="nickname"
-        />
-        <c-input
-          v-model:value="form.password"
-          required
-          label="Heslo"
-          name="password"
-          type="password"
-        />
-      </div>
-
-      <div class="login-submit-wrapper">
-        <c-link :to="{ name: 'register' }">
-          Nemáte ještě účet? Registrujte se!
-        </c-link>
-        <c-button color="success" class="login-submit">Přihlásit se</c-button>
-      </div>
+      <c-input
+        v-model:value="form.nickname"
+        required
+        label="Přezdívka"
+        name="nickname"
+      />
+      <c-input
+        v-model:value="form.password"
+        required
+        label="Heslo"
+        name="password"
+        type="textarea"
+      />
     </c-form>
   </c-card>
 </template>

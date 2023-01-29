@@ -7,7 +7,7 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 
 const mainMenus = ref<MainMenu[]>([
-  { name: "Domů", routeName: "home" },
+  { name: "Nová zpráva", routeName: "newMessage" },
   { name: "Přijaté zprávy", routeName: "inbox" },
   { name: "Odeslané zprávy", routeName: "outbox" },
   { name: "Koš", routeName: "trash" },

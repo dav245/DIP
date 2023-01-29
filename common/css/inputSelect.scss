@@ -1,0 +1,110 @@
+.input-select-with-label {
+  --v-input-spacing: calc(2 * var(--v-base-unit));
+
+  position: relative;
+}
+
+.input-select {
+  width: 100%;
+  cursor: pointer;
+
+  border: 1px solid rgb(var(--v-border-primary));
+  border-radius: 4px;
+  padding: var(--v-input-spacing);
+  box-shadow: 2px 2px 8px rgba(var(--v-border-primary), 0.2);
+}
+
+.input-select-items {
+  display: none;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  min-width: 100%;
+  transform: translateY(calc(100% - 1px));
+  z-index: 10;
+}
+
+.input-select-items > ul {
+  border: 3px solid rgb(var(--v-border-primary));
+  border-top-width: 1px;
+  margin: -2px;
+  border-radius: 4px;
+  padding: 0 space-x();
+  box-shadow: 2px 2px 8px rgba(var(--v-border-primary), 0.2);
+}
+
+.input-select-items > ul > li {
+  padding: space-y(0.5) space-y();
+  margin: 0 calc(-1 * space-x());
+  cursor: pointer;
+}
+.input-select-items > ul > li:hover,
+.input-select-items > ul > li:focus,
+.input-select-items > ul > li.selected:hover,
+.input-select-items > ul > li.selected:focus {
+  background-color: rgba(var(--v-primary), 0.2);
+}
+.input-select-items > ul > li:not(:last-child) {
+  border-bottom: 1px solid rgb(var(--v-border-primary));
+}
+.input-select-items > ul > li.selected {
+  position: relative;
+  background-color: rgba(var(--v-primary), 0.4);
+}
+.input-select-items > ul > li.selected::before {
+  content: "";
+  position: absolute;
+  left: space-x(0.5);
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  margin: space-y(0.25) 0;
+  border-left: 4px solid rgb(var(--v-border-primary));
+}
+
+.input-select-items > ul > li.disabled {
+  cursor: not-allowed;
+}
+.input-select-items > ul > li.disabled:hover {
+  background-color: unset;
+}
+
+.input-select.has-focus {
+  outline: 2px solid rgb(var(--v-border-primary));
+  outline-offset: 0px;
+}
+
+.input-select-items.is-open {
+  display: block;
+}
+
+.label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-left: var(--v-input-spacing);
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 4px;
+  transform: translateY(var(--v-input-spacing));
+}
+
+.label:has(+ .input-select:not(:placeholder-shown)),
+.label:has(+ .input-select:focus) {
+  transform: translateY(-50%);
+  margin-left: calc(var(--v-input-spacing) / 2);
+  padding: 0 calc(var(--v-input-spacing) / 2);
+}
+
+.input-select__state-success {
+  --v-border-primary: var(--v-border-success);
+}
+
+.input-select__state-error {
+  --v-border-primary: var(--v-border-error);
+}
+
+.input-select__state-error > .input-select-messages {
+  margin-top: space-y(0.5);
+  color: rgb(var(--v-border-error));
+}

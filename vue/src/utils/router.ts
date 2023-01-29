@@ -24,9 +24,9 @@ const routes: RouteRecordRaw[] = [
     },
   },
   {
-    path: "/home",
-    name: "home",
-    component: () => import("@p/Home.vue"),
+    path: "/new-message",
+    name: "newMessage",
+    component: () => import("@p/NewMessage.vue"),
   },
   {
     path: "/inbox",
@@ -44,6 +44,10 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@p/Inbox.vue"),
   },
   ...getDesignerRoutes(),
+  {
+    path: "/:pathMatch(.*)*",
+    component: () => import("@p/NotFound.vue"),
+  },
 ];
 
 const router = createRouter({
@@ -55,7 +59,7 @@ router.beforeEach((to, from, next) => {
   const { isLoggedIn } = useStore();
 
   if (isLoggedIn.value && to.meta.guest) {
-    next({ name: "home" });
+    next({ name: "newMessage" });
   } else if (!isLoggedIn.value && !to.meta.guest) {
     next({ name: "login" });
   } else {

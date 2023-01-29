@@ -51,4 +51,14 @@ export const getDesignerRoutes = (): RouteRecordRaw[] => [
       layout: () => GuestLayout,
     },
   },
+
+  {
+    path: "/designer/input-select",
+    name: "designerInputSelect",
+    component: () => import("./InputSelect.vue"),
+    meta: {
+      guest: true,
+      layout: () => GuestLayout,
+    },
+  },
 ];

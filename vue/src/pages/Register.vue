@@ -27,7 +27,7 @@ const submit = async () => {
 
   if (response) {
     store.isLoggedIn.value = true;
-    router.push({ name: "home" });
+    router.push({ name: "newMessage" });
   }
 };
 </script>

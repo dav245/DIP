@@ -3,8 +3,16 @@ import { RuleType } from "./ruleType";
 export const validationFieldsKey = Symbol("validationFieldsKey");
 export const validationStateKey = Symbol("validationStateKey");
 
+export type ValidationValueType =
+  | string
+  | number
+  | boolean
+  | null
+  | undefined
+  | (string | number)[];
+
 export type ValidationField = {
-  getValue: () => string | number | boolean | null | undefined;
+  getValue: () => ValidationValueType;
   setMessage: (message: string[]) => void;
   rules: RuleType[];
 };

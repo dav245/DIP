@@ -1,6 +1,6 @@
+import { type ValidationValueType } from "./validateFields";
+
 export type RuleType = {
-  validate: (
-    value?: string | number | boolean | null | undefined
-  ) => Promise<boolean>;
-  message: (value?: string | number | boolean | null | undefined) => string;
+  validate: (value?: ValidationValueType) => Promise<boolean>;
+  message: (value?: ValidationValueType) => string;
 };

@@ -16,14 +16,20 @@ const props = defineProps<{
   value?: string;
   rules?: RuleType[];
   type?: string;
+  autocomplete?: boolean;
 }>();
 
 const emits = defineEmits<{
   (e: "update:value", value: string): void;
 }>();
 
+const element = ref<HTMLInputElement | HTMLTextAreaElement>();
 const innerValue = ref(props.value ?? "");
 const errorMessages = ref<string[]>([]);
+
+const style = ref({
+  height: "auto",
+});
 
 const field: ValidationField = {
   getValue: () => innerValue.value,
@@ -61,6 +67,12 @@ const updateInput = (event: Event) => {
   innerValue.value = target.value;
 
   if (errorMessages.value.length) registerField?.revalidate();
+
+  if (props.type === "textarea") {
+    console.log(element.value?.scrollHeight);
+    style.value.height = "5px";
+    style.value.height = (element.value?.scrollHeight ?? 0) + 2 + "px";
+  }
 };
 
 const currentState = computed(() => {
@@ -79,13 +91,17 @@ const currentState = computed(() => {
     }"
   >
     <label v-if="label" class="label">{{ label }}</label>
-    <input
+    <component
+      ref="element"
+      :style="style"
+      :is="type === 'textarea' ? 'textarea' : 'input'"
       v-bind="$attrs"
       :value="innerValue"
       :name="name"
       :type="type"
       class="input"
       placeholder=" "
+      :autocomplete="autocomplete ? 'on' : 'off'"
       @input="updateInput"
     />
     <ul class="input-messages">
