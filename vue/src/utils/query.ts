@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { ref, UnwrapRef } from "vue";
 
 export interface QueryOptions<Result> {
   query: () => Promise<Result>;
@@ -13,7 +13,7 @@ export const useQuery = <Result, Variables = {}>(
   const refetch = async () => {
     loading.value = true;
     try {
-      data.value = await options.query();
+      data.value = (await options.query()) as UnwrapRef<Result>;
     } finally {
       loading.value = false;
     }
