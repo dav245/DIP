@@ -48,6 +48,7 @@ const submit = async () => {
           label="Heslo"
           name="password"
           type="password"
+          validation-mode="eager"
           :rules="[
             passwordConfirmRule(() => passwordConfirm),
             ...getPasswordRules(),

@@ -17,6 +17,7 @@ const props = defineProps<{
   rules?: RuleType[];
   type?: string;
   autocomplete?: boolean;
+  validationMode?: "lazy" | "eager";
 }>();
 
 const emits = defineEmits<{
@@ -66,7 +67,8 @@ const updateInput = (event: Event) => {
   emits("update:value", target.value);
   innerValue.value = target.value;
 
-  if (errorMessages.value.length) registerField?.revalidate();
+  if (errorMessages.value.length || props.validationMode === "eager")
+    registerField?.revalidate();
 
   if (props.type === "textarea") {
     console.log(element.value?.scrollHeight);
