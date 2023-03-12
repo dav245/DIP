@@ -1,0 +1,20 @@
+version: "2"
+services:
+  webserver:
+    image: dip
+    ports:
+      - "3000:80"
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mysql:8.0
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: RtnpGqIGa
+      MYSQL_DATABASE: dip
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: RYKTaNb8ifyFuluwvl7y5
+    ports:
+      - "9906:3306"
