@@ -9,6 +9,7 @@ import {
   createMessage,
   CreateMessagePayload,
 } from "@common/ts/api/createMessage";
+import { showMessage } from "@/utils/messages";
 
 const form = ref<CreateMessagePayload>({
   recipients: [],
@@ -17,8 +18,20 @@ const form = ref<CreateMessagePayload>({
   send: true,
 });
 
-const submit = async () => {
+const submit = async (reset: () => void) => {
   const response = await createMessage(form.value);
+
+  showMessage({
+    title: "Zpráva odeslána",
+    type: "success",
+    content: "Zpráva byla úspěšně odeslána",
+  });
+
+  form.value.subject = "";
+  form.value.content = "";
+  form.value.recipients = [];
+
+  reset();
 };
 </script>
 

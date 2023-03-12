@@ -7,7 +7,7 @@ import {
 } from "@common/ts/validation/validateFields";
 import { ref, provide } from "vue";
 
-const props = defineProps<{ submit: () => void }>();
+const props = defineProps<{ submit: (reset: () => void) => void }>();
 
 const submitTried = ref(false);
 const isInvalid = ref(false);
@@ -37,7 +37,10 @@ const submitForm = async (event: Event) => {
   const isValid = await validate();
   if (!isValid) return;
 
-  props.submit();
+  props.submit(() => {
+    submitTried.value = false;
+    isInvalid.value = false;
+  });
 };
 </script>
 
