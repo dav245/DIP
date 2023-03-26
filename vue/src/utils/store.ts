@@ -15,6 +15,7 @@ const createStore = <T extends Record<string, unknown>>(store: () => T) => {
 
 export const useStore = createStore(() => {
   const isLoggedIn = ref(getToken() !== null);
+  const menuNewMessages = ref(0);
 
-  return { isLoggedIn };
+  return { isLoggedIn, menuNewMessages };
 });

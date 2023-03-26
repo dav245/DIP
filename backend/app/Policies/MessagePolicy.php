@@ -41,4 +41,9 @@ class MessagePolicy
     {
         return $message->isSentBy($user);
     }
+
+    public function new(User $user): Response | bool
+    {
+        return true;
+    }
 }

@@ -3,14 +3,16 @@
   top: #{space-y()};
   left: #{space-x()};
   right: #{space-x()};
-
+  pointer-events: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: #{space-y()};
+  z-index: 100;
 }
 
 .message {
+  pointer-events: auto;
   --v-card-spacing-x: calc(2 * var(--v-space-base-x) * var(--v-base-unit) / 2);
   --v-card-spacing-y: calc(1 * var(--v-space-base-y) * var(--v-base-unit) / 2);
   width: unset;

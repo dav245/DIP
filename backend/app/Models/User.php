@@ -65,4 +65,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Message::class, 'user_id')->onlyTrashed();
     }
+
+    public function numberOfNewMessages(): int
+    {
+        return $this->receivedMessages()->whereNull('seen_at')->count();
+    }
 }

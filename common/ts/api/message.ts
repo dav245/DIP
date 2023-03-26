@@ -19,5 +19,6 @@ export interface Message {
   user_id: number;
   type: MessageType;
   created_at: string;
+  seen_at: string;
   message_content?: MessageContent;
 }

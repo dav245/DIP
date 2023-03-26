@@ -8,6 +8,7 @@ use App\Http\Requests\Message\UpdateMessageRequest;
 use App\Models\Message;
 use App\Models\MessageContent;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class MessageController extends Controller
@@ -66,7 +67,14 @@ class MessageController extends Controller
 
         $message->load('messageContent.recipients', 'messageContent.user');
 
-        return ['message' => $message];
+        if (!$message->seen_at && $message->type === MessageType::RECEIVED()) {
+            $message->update(['seen_at' => now()]);
+        }
+
+        return [
+            'message' => $message,
+            'numberOfNewMessages' => User::logged()->numberOfNewMessages()
+        ];
     }
 
     public function store(CreateMessageRequest $request): Message
@@ -132,5 +140,12 @@ class MessageController extends Controller
             : $message->delete();
 
         return ['deleted' => true];
+    }
+
+    public function new(): array
+    {
+        $this->authorize('new', Message::class);
+
+        return ['numberOfNewMessages' => User::logged()->numberOfNewMessages()];
     }
 }

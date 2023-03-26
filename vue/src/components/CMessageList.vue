@@ -2,7 +2,7 @@
 import CButton from "./CButton.vue";
 import CLink from "./CLink.vue";
 import { formatApiDateString } from "@common/ts/api/date";
-import { Message } from "@common/ts/api/message";
+import { Message, MessageType } from "@common/ts/api/message";
 import { deleteMessage } from "@common/ts/api/deleteMessage";
 import { withLoading } from "@/utils/loadingState";
 import { defineComponent, h } from "vue";
@@ -43,7 +43,7 @@ const deleteButton = defineComponent({
         },
         {
           default: ({ shouldConfirm }: { shouldConfirm: boolean }) =>
-            shouldConfirm ? "Opravdu smazat?" : "Smazat",
+            shouldConfirm ? "Opravdu?" : "Smazat",
         }
       );
   },
@@ -54,6 +54,11 @@ const deleteButton = defineComponent({
   <ul>
     <li v-for="message in messages" class="message-list-item">
       <span class="message-list-item-user">
+        <span
+          v-if="!message.seen_at && message.type === MessageType.TYPE_RECEIVED"
+          class="menu-badge list-variant"
+        >
+        </span>
         {{ showUser(message) }}
       </span>
       <span class="message-list-item-date">

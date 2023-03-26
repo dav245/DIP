@@ -4,6 +4,7 @@ import { routes } from "./routes";
 
 export interface GetMessageResponse {
   message: Message;
+  numberOfNewMessages: number;
 }
 
 export const getMessage = (messageId: string) =>

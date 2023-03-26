@@ -12,6 +12,7 @@ export const routes = {"sanctum.csrf-cookie": {url: () => `/sanctum/csrf-cookie`
 "message.store": {url: () => `/api/message/message`, method: "PUT"},
 "message.update": {url: (message: string|number) => `/api/message/message/${message}`, method: "POST"},
 "message.send": {url: (message: string|number) => `/api/message/message/${message}/send`, method: "POST"},
+"message.new": {url: (from: string|number|null) => `/api/message/messages/new/${from}`, method: "POST"},
 "message.delete": {url: (message: string|number) => `/api/message/message/${message}`, method: "DELETE"},
 "auth.login": {url: () => `/api/auth/login`, method: "POST"},
 "auth.register": {url: () => `/api/auth/register`, method: "POST"},

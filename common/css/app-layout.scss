@@ -1,17 +1,18 @@
 .app-layout {
-  --v-sidebar-size: 250px;
+  --v-sidebar-size: 0px;
 
   min-height: 100vh;
   width: 100%;
 
   display: grid;
   grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
+    "header"
+    "sidebar"
+    "main"
+    "footer";
 
-  grid-template-columns: var(--v-sidebar-size) 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
 }
 
 .app-layout-header {
@@ -59,4 +60,18 @@
 
 .current-app {
   color: rgb(var(--v-border-error));
+}
+
+@include md {
+  .app-layout {
+    --v-sidebar-size: 250px;
+
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+
+    grid-template-columns: var(--v-sidebar-size) 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
 }

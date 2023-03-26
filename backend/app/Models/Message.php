@@ -24,11 +24,13 @@ class Message extends Model
     protected $fillable = [
         'type',
         'user_id',
-        'message_content_id'
+        'message_content_id',
+        'seen_at'
     ];
 
     protected $casts = [
-        'type' => MessageTypeCast::class
+        'type' => MessageTypeCast::class,
+        'seen_at' => 'datetime'
     ];
 
     public function user(): BelongsTo

@@ -39,6 +39,7 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::put('message', 'store')->name('store');
             Route::post('message/{message}', 'update')->name('update');
             Route::post('message/{message}/send', 'send')->name('send');
+            Route::post('messages/new/{from?}', 'new')->name('new');
             Route::delete('message/{message}', 'delete')->name('delete')->withTrashed();
         });
 });

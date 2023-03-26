@@ -1,9 +1,11 @@
 .message-list-item {
   display: grid;
   grid-template-areas:
-    "user date"
-    "subject action"
-    "content action";
+    "user"
+    "date"
+    "subject"
+    "content"
+    "action";
 
   grid-template-columns: 1fr auto;
   padding: space-y() 0;
@@ -24,6 +26,7 @@
 .message-list-item-user {
   grid-area: user;
   font-weight: bold;
+  display: flex;
 }
 
 .message-list-item-subject {
@@ -39,6 +42,7 @@
 .message-list-item-content {
   grid-area: content;
   color: rgba(var(--v-text-primary), 0.5);
+  min-height: 38px;
 }
 
 .message-list-item-action {
@@ -47,4 +51,28 @@
   align-items: flex-end;
   gap: 0 space-x();
   justify-content: end;
+}
+
+.menu-badge.list-variant {
+  margin-left: unset;
+  margin-right: 8px;
+}
+
+@include sm {
+  .message-list-item {
+    grid-template-areas:
+      "user date"
+      "subject subject"
+      "content content"
+      "action action";
+  }
+}
+
+@include md {
+  .message-list-item {
+    grid-template-areas:
+      "user date"
+      "subject action"
+      "content action";
+  }
 }

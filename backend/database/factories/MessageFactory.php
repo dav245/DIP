@@ -18,6 +18,8 @@ class MessageFactory extends Factory
             'type' => fake()->randomElement(MessageType::values()),
             'user_id' => User::factory(),
             'message_content_id' => fn ($args) => MessageContent::factory(),
+            'created_at' => now(),
+            'updated_at' => now()
         ];
     }
 }
