@@ -20,14 +20,18 @@
   padding: space-y(0.5) space-x();
   border-bottom: 1px solid rgb(var(--v-border-primary));
   display: flex;
+  flex-direction: column;
+  gap: space-y(0.5) space-x();
 }
 
 .app-layout-header-app-name {
+  text-align: center;
   font-size: calc(var(--v-font-size) * 2);
 }
 
 .app-layout-header-sign-out {
-  margin-left: auto;
+  flex-grow: 1;
+  text-align: center;
 }
 
 .app-layout-sidebar {
@@ -60,6 +64,23 @@
 
 .current-app {
   color: rgb(var(--v-border-error));
+}
+
+@include sm {
+  .app-layout-header-app-name {
+    text-align: unset;
+  }
+
+  .app-layout-header {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .app-layout-header-sign-out {
+    margin-left: auto;
+    flex-grow: unset;
+    text-align: unset;
+  }
 }
 
 @include md {

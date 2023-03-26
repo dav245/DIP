@@ -9,6 +9,7 @@
 
   grid-template-columns: 1fr auto;
   padding: space-y() 0;
+  gap: space-y(0.5) space-x();
 }
 
 .message-list-item:last-child {
@@ -31,12 +32,11 @@
 
 .message-list-item-subject {
   grid-area: subject;
-  margin: space-y(0.5) 0;
 }
 
 .message-list-item-date {
   grid-area: date;
-  text-align: right;
+  text-align: left;
 }
 
 .message-list-item-content {
@@ -69,6 +69,10 @@
 }
 
 @include md {
+  .message-list-item-date {
+    text-align: right;
+  }
+
   .message-list-item {
     grid-template-areas:
       "user date"
