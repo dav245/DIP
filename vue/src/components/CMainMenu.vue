@@ -17,7 +17,7 @@ let timeoutId: NodeJS.Timeout | null = null;
 const refreshUnreadMessages = async () => {
   const response = await checkNewMessages();
   store.menuNewMessages.value = response?.numberOfNewMessages ?? 0;
-  timeoutId = setTimeout(refreshUnreadMessages, 1000 * 5);
+  timeoutId = setTimeout(refreshUnreadMessages, 1000 * 60);
 };
 
 refreshUnreadMessages();

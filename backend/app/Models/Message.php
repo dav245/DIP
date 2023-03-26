@@ -64,4 +64,9 @@ class Message extends Model
 
         Message::insert($messages);
     }
+
+    public function toArray()
+    {
+        return array_merge(parent::toArray(), ['type' => $this->type->type()]);
+    }
 }

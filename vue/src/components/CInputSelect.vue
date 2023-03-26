@@ -31,6 +31,7 @@ const innerValue = ref<string | number | (string | number)[]>(
 );
 const errorMessages = ref<string[]>([]);
 const isOpen = ref<boolean>(false);
+const hasFocus = ref<boolean>(false);
 
 const field: ValidationField = {
   getValue: () => innerValue.value,
@@ -96,6 +97,8 @@ const close = () => {
 const selectItem = (item: SelectItem) => {
   if (item.disabled) return;
 
+  search.value = "";
+
   if (Array.isArray(innerValue.value)) {
     if (isSelected(item)) {
       innerValue.value = innerValue.value.filter((i) => i !== item.value);
@@ -153,7 +156,7 @@ const filteredItems = computed(() =>
     <input
       ref="element"
       v-bind="$attrs"
-      :value="isOpen ? search : formattedInnerValue"
+      :value="isOpen && hasFocus ? search : formattedInnerValue"
       :readonly="!isOpen"
       :name="name"
       class="input-select"
@@ -162,6 +165,8 @@ const filteredItems = computed(() =>
       autocomplete="off"
       @input="updateInput"
       @focus="isOpen = true"
+      @focusin="hasFocus = true"
+      @focusout="hasFocus = false"
       @click="isOpen = true"
       @keydown.shift.tab="isOpen = false"
     />
