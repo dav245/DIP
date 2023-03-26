@@ -63,3 +63,7 @@
 .button-loader {
   margin-left: space-x();
 }
+
+.button.button__confirm {
+  filter: contrast(1.5);
+}

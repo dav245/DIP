@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { validationStateKey } from "@common/ts/validation/validateFields";
-import { inject, computed, Ref } from "vue";
+import { useButtonConfirmation } from "@common/ts/api/buttonConfirmation";
+import { inject, computed, Ref, ref } from "vue";
 
 const props = defineProps<{
   color?: "primary" | "secondary" | "success" | "error";
   size?: "small" | "medium" | "large";
   loading?: boolean;
   disabled?: boolean;
+  confirm?: boolean;
   onClick?: () => void;
 }>();
 
@@ -24,6 +26,24 @@ const currentColor = computed(() => {
 
   return props.color;
 });
+
+const shouldConfirm = ref(false);
+const { setShouldConfirmTimeout, clearShouldConfirmTimeout } =
+  useButtonConfirmation(() => (shouldConfirm.value = false));
+
+const onClick = () => {
+  if (props.disabled) return;
+  if (!props.onClick) return;
+
+  if (props.confirm && !shouldConfirm.value) {
+    shouldConfirm.value = true;
+    return;
+  }
+  clearShouldConfirmTimeout();
+  shouldConfirm.value = false;
+
+  props.onClick();
+};
 </script>
 
 <template>
@@ -34,10 +54,13 @@ const currentColor = computed(() => {
       button__disabled: disabled,
       [`button__${currentColor}`]: currentColor,
       [`button__${size}`]: size,
+      [`button__confirm`]: shouldConfirm,
     }"
-    @click="disabled ? null : onClick?.()"
+    @click="onClick"
+    @mouseover="clearShouldConfirmTimeout"
+    @mouseout="setShouldConfirmTimeout"
   >
-    <slot />
+    <slot :shouldConfirm="shouldConfirm" />
 
     <span v-if="loading" class="loader button-loader" />
   </button>

@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Message;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,8 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory()->count(20)->create()->each(function (User $user) {
-            Message::factory()->count(20)->create(['user_id' => $user->id]);
+        $password = Hash::make('test');
+        User::factory()->create(['nickname' => 'test', 'password' => $password]);
+        User::factory()->count(20)->create(['password' => $password])->each(function (User $user) {
+            Message::factory()->count(5)->create(['user_id' => $user->id]);
         });
     }
 }

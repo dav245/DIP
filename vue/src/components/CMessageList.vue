@@ -38,9 +38,13 @@ const deleteButton = defineComponent({
           color: "error",
           disabled: loading.value,
           loading: loading.value,
+          confirm: true,
           onClick: () => deleteMessageOnClick(innerProps.messageId),
         },
-        "Smazat"
+        {
+          default: ({ shouldConfirm }: { shouldConfirm: boolean }) =>
+            shouldConfirm ? "Opravdu smazat?" : "Smazat",
+        }
       );
   },
 });
