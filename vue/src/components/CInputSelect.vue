@@ -15,6 +15,7 @@ const props = defineProps<{
   label?: string;
   state?: "success" | "error";
   required?: boolean;
+  disabled?: boolean;
   value?: (string | number)[] | string | number;
   rules?: RuleType[];
   multiple?: boolean;
@@ -63,6 +64,7 @@ watch(
 );
 
 const updateInput = (event: Event) => {
+  if (props.disabled) return;
   const target = event.target as HTMLInputElement;
 
   if (isOpen.value) {
@@ -161,6 +163,7 @@ const filteredItems = computed(() =>
       :name="name"
       class="input-select"
       :class="{ 'has-focus': isOpen }"
+      :disabled="disabled"
       placeholder=" "
       autocomplete="off"
       @input="updateInput"

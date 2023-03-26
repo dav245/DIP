@@ -21,7 +21,10 @@ const to = computed(() =>
       <span>Od: {{ from }}</span>
       <span>Pro: {{ to }}</span>
       <span>Předmět: {{ subject }}</span>
-      <span>Obsah: {{ content }}</span>
+      <span style="white-space: pre-line">
+        Obsah:<br />
+        {{ content }}
+      </span>
     </div>
   </c-card>
 </template>

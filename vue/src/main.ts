@@ -5,6 +5,7 @@ import { registerRouter } from "@/utils/router";
 import { setApiCaller, ApiError } from "@common/ts/api/api";
 import { showMessage } from "./utils/messages";
 import { loadToken } from "@common/ts/api/tokenStore";
+import { loadUserId, loadUserName } from "@common/ts/api/userIdStore";
 
 setApiCaller(async (call) => {
   try {
@@ -23,6 +24,8 @@ setApiCaller(async (call) => {
 });
 
 loadToken();
+loadUserId();
+loadUserName();
 
 const app = createApp(App);
 

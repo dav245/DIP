@@ -20,7 +20,11 @@ class AuthController extends Controller
             ]);
         }
 
-        return ['token' => $user->createToken($request->device_name)->plainTextToken];
+        return [
+            'token' => $user->createToken($request->device_name)->plainTextToken,
+            'userId' => $user->id,
+            'userName' => $user->nickname,
+        ];
     }
 
     public function register(RegisterRequest $request)
@@ -29,6 +33,10 @@ class AuthController extends Controller
             'password' => Hash::make($request->password)
         ]));
 
-        return ['token' => $user->createToken($request->device_name)->plainTextToken];
+        return [
+            'token' => $user->createToken($request->device_name)->plainTextToken,
+            'userId' => $user->id,
+            'userName' => $user->nickname,
+        ];
     }
 }

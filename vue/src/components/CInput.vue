@@ -6,7 +6,7 @@ import {
   validationFieldsKey,
   validationStateKey,
 } from "@common/ts/validation/validateFields";
-import { inject, watch, ref, computed, Ref, useAttrs } from "vue";
+import { inject, watch, ref, computed, Ref, nextTick } from "vue";
 
 const props = defineProps<{
   name?: string;
@@ -16,6 +16,7 @@ const props = defineProps<{
   value?: string;
   rules?: RuleType[];
   type?: string;
+  disabled?: boolean;
   autocomplete?: boolean;
   validationMode?: "lazy" | "eager";
 }>();
@@ -62,6 +63,7 @@ watch(
 );
 
 const updateInput = (event: Event) => {
+  if (props.disabled) return;
   const target = event.target as HTMLInputElement;
 
   emits("update:value", target.value);
@@ -69,19 +71,35 @@ const updateInput = (event: Event) => {
 
   if (errorMessages.value.length || props.validationMode === "eager")
     registerField?.revalidate();
-
-  if (props.type === "textarea") {
-    console.log(element.value?.scrollHeight);
-    style.value.height = "5px";
-    style.value.height = (element.value?.scrollHeight ?? 0) + 2 + "px";
-  }
 };
+
+watch(
+  innerValue,
+  async () => {
+    await nextTick();
+    if (props.type === "textarea") {
+      style.value.height = "5px";
+      style.value.height = (element.value?.scrollHeight ?? 0) + 2 + "px";
+    }
+  },
+  { immediate: true }
+);
 
 const currentState = computed(() => {
   if (errorMessages.value.length) return "error";
   if (validationStatus?.submitTried?.value) return "success";
 
   return props.state;
+});
+
+defineExpose({
+  select: () => {
+    element.value?.select();
+  },
+  cursorToStart: () => {
+    element.value?.focus();
+    element.value?.setSelectionRange(0, 0);
+  },
 });
 </script>
 
@@ -102,6 +120,7 @@ const currentState = computed(() => {
       :name="name"
       :type="type"
       class="input"
+      :disabled="disabled"
       placeholder=" "
       :autocomplete="autocomplete ? 'on' : 'off'"
       @input="updateInput"

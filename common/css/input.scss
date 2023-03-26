@@ -48,3 +48,8 @@
   margin-top: space-y(0.5);
   color: rgb(var(--v-border-error));
 }
+
+.input-with-label:has(.input[disabled]) {
+  background-color: rgb(238, 238, 238);
+  cursor: not-allowed;
+}

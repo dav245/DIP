@@ -20,6 +20,7 @@ class MessageController extends Controller
         return [
             'messages' => User::logged()
                 ->receivedMessages()
+                ->orderBy('created_at', 'DESC')
                 ->with(['messageContent.user', 'messageContent.recipients'])
                 ->get()
         ];
@@ -32,6 +33,7 @@ class MessageController extends Controller
         return [
             'messages' => User::logged()
                 ->sentMessages()
+                ->orderBy('created_at', 'DESC')
                 ->with(['messageContent.user', 'messageContent.recipients'])
                 ->get()
         ];
@@ -44,6 +46,7 @@ class MessageController extends Controller
         return [
             'messages' => User::logged()
                 ->draftMessages()
+                ->orderBy('created_at', 'DESC')
                 ->with(['messageContent.user', 'messageContent.recipients'])
                 ->get()
         ];

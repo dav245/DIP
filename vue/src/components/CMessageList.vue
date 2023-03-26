@@ -71,6 +71,7 @@ const deleteButton = defineComponent({
         {{ createContentPreview(message.message_content?.content ?? "") }}
       </span>
       <span class="message-list-item-action">
+        <slot name="actions" :message="message" />
         <c-link
           :to="{ name: 'messageDetail', params: { messageId: message.id } }"
         >

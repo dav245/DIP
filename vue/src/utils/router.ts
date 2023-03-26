@@ -24,9 +24,10 @@ const routes: RouteRecordRaw[] = [
     },
   },
   {
-    path: "/new-message",
+    path: "/new-message/:from?",
     name: "newMessage",
     component: () => import("@p/NewMessage.vue"),
+    props: true,
   },
   {
     path: "/message/:messageId/detail",

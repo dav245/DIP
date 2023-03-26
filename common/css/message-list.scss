@@ -49,8 +49,9 @@
   grid-area: action;
   display: flex;
   align-items: flex-end;
-  gap: 0 space-x();
+  gap: space-y(0.25) space-x();
   justify-content: end;
+  flex-wrap: wrap;
 }
 
 .menu-badge.list-variant {

@@ -1,6 +1,7 @@
 import { withApiCall } from "./api";
 import { routes } from "./routes";
 import { storeToken } from "./tokenStore";
+import { storeUserId, storeUserName } from "./userIdStore";
 
 export interface LoginPayload {
   nickname: string;
@@ -10,6 +11,8 @@ export interface LoginPayload {
 
 export interface LoginResponse {
   token: string;
+  userId: number;
+  userName: string;
 }
 
 export const login = (data: LoginPayload) =>
@@ -23,6 +26,8 @@ export const login = (data: LoginPayload) =>
     );
 
     storeToken(response.token);
+    storeUserId(response.userId);
+    storeUserName(response.userName);
 
     return response;
   });

@@ -25,6 +25,8 @@ const links = [
     <div class="app-layout-header">
       <h1 class="app-layout-header-app-name">Thessenger</h1>
 
+      {{ store.userName.value }}
+
       <c-button class="app-layout-header-sign-out" @click="doLogout">
         Odhlásit se
       </c-button>

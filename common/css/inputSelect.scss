@@ -110,3 +110,10 @@
   margin-top: space-y(0.5);
   color: rgb(var(--v-border-error));
 }
+
+.input-select-with-label:has(.input-select[disabled]) {
+  background-color: rgb(238, 238, 238);
+}
+.input-select[disabled] {
+  cursor: not-allowed;
+}

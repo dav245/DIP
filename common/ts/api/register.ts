@@ -1,6 +1,7 @@
 import { withApiCall } from "./api";
 import { routes } from "./routes";
 import { storeToken } from "./tokenStore";
+import { storeUserId, storeUserName } from "./userIdStore";
 
 export interface RegisterPayload {
   nickname: string;
@@ -10,6 +11,8 @@ export interface RegisterPayload {
 
 export interface RegisterResponse {
   token: string;
+  userId: number;
+  userName: string;
 }
 
 export const register = (data: RegisterPayload) =>
@@ -23,6 +26,8 @@ export const register = (data: RegisterPayload) =>
     );
 
     storeToken(response.token);
+    storeUserId(response.userId);
+    storeUserName(response.userName);
 
     return response;
   });

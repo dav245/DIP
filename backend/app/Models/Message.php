@@ -58,7 +58,9 @@ class Message extends Model
             return [
                 'user_id' => $recipient->id,
                 'message_content_id' => $this->message_content_id,
-                'type' => MessageType::RECEIVED()
+                'type' => MessageType::RECEIVED(),
+                'created_at' => now(),
+                'updated_at' => now(),
             ];
         })->toArray();
 

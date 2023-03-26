@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import CMessageList from "@/components/CMessageList.vue";
 import CCard from "@/components/CCard.vue";
+import CLink from "@/components/CLink.vue";
+import CButton from "@/components/CButton.vue";
 import { ref, onMounted } from "vue";
 import { Message } from "@common/ts/api/message";
 import { getReceivedMessages } from "@common/ts/api/getReceivedMessages";
@@ -29,6 +31,12 @@ const onDeleted = (messageId: string | number) => {
       :messages="messages"
       :show-user="showUser"
       @deleted="onDeleted"
-    />
+    >
+      <template #actions="{ message }">
+        <c-link :to="{ name: 'newMessage', params: { from: message.id } }">
+          <c-button size="medium"> Odpovědět </c-button>
+        </c-link>
+      </template>
+    </c-message-list>
   </c-card>
 </template>
