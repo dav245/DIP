@@ -11,6 +11,9 @@
     },
     {
       "path": "vue"
+    },
+    {
+      "path": "solidjs"
     }
   ],
   "settings": {

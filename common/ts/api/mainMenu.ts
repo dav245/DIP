@@ -4,8 +4,8 @@ export interface MainMenu {
 }
 
 export const getMainMenu = () => [
-  { name: "Nová zpráva", routeName: "newMessage" },
-  { name: "Přijaté zprávy", routeName: "inbox" },
-  { name: "Odeslané zprávy", routeName: "outbox" },
-  { name: "Koš", routeName: "trash" },
+  { name: "Nová zpráva", routeName: "newMessage", url: "/new-message" },
+  { name: "Přijaté zprávy", routeName: "inbox", url: "/inbox" },
+  { name: "Odeslané zprávy", routeName: "outbox", url: "/outbox" },
+  { name: "Koš", routeName: "trash", url: "/trash" },
 ];

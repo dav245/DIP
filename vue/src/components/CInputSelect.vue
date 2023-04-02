@@ -22,7 +22,7 @@ const props = defineProps<{
 }>();
 
 const emits = defineEmits<{
-  (e: "update:value", value: string): void;
+  (e: "update:value", value: (string | number)[] | string | number): void;
 }>();
 
 const search = ref("");
@@ -111,6 +111,8 @@ const selectItem = (item: SelectItem) => {
     innerValue.value = item.value;
     close();
   }
+
+  emits("update:value", innerValue.value);
 };
 
 const onClickEvent = (e: Event) => {
