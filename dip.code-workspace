@@ -14,6 +14,9 @@
     },
     {
       "path": "solidjs"
+    },
+    {
+      "path": "svelte"
     }
   ],
   "settings": {

@@ -1,6 +1,7 @@
 export interface MainMenu {
   routeName: string;
   name: string;
+  url: string;
 }
 
 export const getMainMenu = () => [
