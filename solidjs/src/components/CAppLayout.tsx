@@ -26,6 +26,7 @@ export const CAppLayout: Component<{
     { href: import.meta.env.VITE_BACKEND_URL, name: "Backend" },
     { href: import.meta.env.VITE_VUE_APP_URL, name: "Vue" },
     { href: import.meta.env.VITE_SOLID_APP_URL, name: "Solid JS", current: true },
+    { href: import.meta.env.VITE_SVELTE_APP_URL, name: "Svelte" },
   ];
 
   return (
