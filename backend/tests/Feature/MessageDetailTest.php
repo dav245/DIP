@@ -33,7 +33,7 @@ class MessageDetailTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJsonPath('id', $this->message->id);
+        $response->assertJsonPath('message.id', $this->message->id);
     }
 
     public function test_user_can_view_others_message()

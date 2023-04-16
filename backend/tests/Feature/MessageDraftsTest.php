@@ -49,8 +49,9 @@ class MessageDraftsTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertJsonPath('total', 1);
-        $response->assertJsonPath('data.0.id', $this->messageDraft->id);
+        $this->assertCount(1, $response->json('messages'));
+
+        $response->assertJsonPath('messages.0.id', $this->messageDraft->id);
     }
 
     public function test_not_logged_in_user_cannot_get_drafts_messages()

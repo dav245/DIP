@@ -33,12 +33,13 @@ class MessageDeleteTest extends TestCase
 
         $response->assertStatus(200);
 
-        $this->assertDatabaseMissing('messages', [
+        $this->assertDatabaseHas('messages', [
             'id' => $this->message->id,
+            'deleted_at' => now()
         ]);
     }
 
-    public function test_user_can_not_delete_message_that_has_been_sent()
+    public function test_user_can_delete_message_that_has_been_sent()
     {
         $this->message->update(['type' => MessageType::SENT()]);
 
@@ -46,7 +47,31 @@ class MessageDeleteTest extends TestCase
             'message' => $this->message->id,
         ]));
 
-        $response->assertStatus(403);
+        $response->assertStatus(200);
+
+        $this->assertDatabaseHas('messages', [
+            'id' => $this->message->id,
+            'deleted_at' => now()
+        ]);
+    }
+
+    public function test_user_can_delete_deleted_message_for_good()
+    {
+        $response = $this->actingAs($this->user)->deleteJson(route('message.delete', [
+            'message' => $this->message->id,
+        ]));
+
+        $response->assertStatus(200);
+
+        $response = $this->actingAs($this->user)->deleteJson(route('message.delete', [
+            'message' => $this->message->id,
+        ]));
+
+        $response->assertStatus(200);
+
+        $this->assertDatabaseMissing('messages', [
+            'id' => $this->message->id
+        ]);
     }
 
     public function test_user_can_not_delete_message_of_other_user()

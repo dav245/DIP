@@ -46,7 +46,6 @@ class MessageUpdateTest extends TestCase
             'id' => $this->message->message_content_id,
             'subject' => 'subject',
             'content' => 'content',
-            'user_id' => $this->user->id
         ]);
 
         $this->assertDatabaseHas('message_content_user', [
@@ -77,7 +76,6 @@ class MessageUpdateTest extends TestCase
             'id' => $this->message->message_content_id,
             'subject' => 'subject',
             'content' => 'content',
-            'user_id' => $this->user->id
         ]);
 
         $this->assertDatabaseHas('message_content_user', [
