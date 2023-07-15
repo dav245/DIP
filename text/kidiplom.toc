@@ -47,7 +47,5 @@
 \contentsline {section}{Conclusions}{39}{section*.6}%
 \babel@toc {english}{}\relax 
 \babel@toc {czech}{}\relax 
-\contentsline {section}{\numberline {A}První příloha}{40}{appendix.A}%
-\contentsline {section}{\numberline {B}Druhá příloha}{40}{appendix.B}%
-\contentsline {section}{\numberline {C}Obsah elektronických dat}{40}{appendix.C}%
-\contentsline {section}{Literatura}{42}{section*.8}%
+\contentsline {section}{\numberline {A}Obsah elektronických dat}{40}{appendix.A}%
+\contentsline {section}{Literatura}{41}{section*.8}%

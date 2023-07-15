@@ -1228,20 +1228,11 @@ s~velikostí 69,9 kB.
 %% Přílohy obsahu textu práce, za makrem \appendix.
 \appendix
 
-\section{První příloha}
-Text první přílohy
-
-\section{Druhá příloha}
-Text druhé přílohy
-
 %% Obsah elektronických dat. Poslední příloha. Upravte podle vlastní
 %% práce!
 \section{Obsah elektronických dat} \label{sec:ObsahData}
 
-Na samotném konci textu práce je uveden stručný popis obsahu
-elektronických dat odevzdaných v~systému katedry informatiky spolu
-s~textem. Tato data jsou nedílnou součástí práce a tvoří (datovou)
-přílohu textu práce. Povinné položky struktury dat jsou:
+Přehled příloh textu práce:
 
 \begin{description}
 
@@ -1252,54 +1243,15 @@ přílohu textu práce. Povinné položky struktury dat jsou:
     bezproblémové vytvoření PDF dokumentu textu (případně v~ZIP
     archivu), tj.~zdrojový text textu a příloh, vložené obrázky, apod.
 
-  \item[\texttt{README.*}] \hfill \\
+  \item[\texttt{readme.md}] \hfill \\
     Textový soubor (s~příponou např. \texttt{.txt}) s~informacemi
-o~opakovatelném způsobu použití ostatních dat práce -- typicky plně
-    reprodukovatelný co nejúplnější funkční postup zprovoznění software
-    vytvořeného v~rámci práce, tzn. jeho případné instalace/nasazení a
-    spuštění, včetně uvedení všech požadavků pro bezproblémový provoz;
-    za zprovoznění software se nepovažuje zpřístupnění (např. po
-    Internetu) již někde zprovozněného software.
+    o~zprovoznění software.
 
-  \item[\texttt{*}] \hfill \\
-    Adresáře a soubory s~veškerými ostatními autorskými daty práce
-    (případně v~ZIP archivu) -- typicky spustitelné a další soubory
-    software vytvořeného v~rámci práce potřebné pro bezproblémový provoz
-    software, případně jeho instalační program, a kompletní zdrojové
-    texty software a další data nutná pro plně reprodukovatelné korektní
-    vytvoření spustitelných souborů.
+  \item[\texttt{backend, common, vue, solidjs, svelte}] \hfill \\
+    Adresáře obsahující veškeré soubory potřebné ke spuštění aplikace, kromě závislostí.
+    Přesný postup, jak závislosti získat je popsaný v souboru readme.md
 
 \end{description}
-
-Dále mohou data obsahovat například:
-
-\begin{itemize}
-
-  %\item[\texttt{data/}] \hfill \\
-  \item
-        ukázková a~testovací data použitá v~práci nebo pro potřeby posouzení
-        práce v~rámci její obhajoby,
-
-        %\item[\texttt{literature/}] \hfill \\
-  \item
-        položky bibliografie v~elektronické podobě, příp.~jiná relevantní
-        literatura
-        a dokumentace vztahující se k~práci,
-
-        %\item[\texttt{install/}] \hfill \\
-  \item
-        cizí data (software) potřebná pro bezproblémové použití autorských
-        dat práce (software), která nejsou standardní součástí
-        předpokládaného (softwarového) vybavení uživatele.
-
-\end{itemize}
-
-U~veškerých cizích obsažených materiálů jejich
-zahrnutí dovolují podmínky pro jejich veřejné šíření nebo přiložený souhlas
-držitele práv k~užití. Pro všechny použité (a~citované) materiály,
-u~kterých toto není splněno a~nejsou tak obsaženy, je uveden
-jejich zdroj, např.~webová adresa, v~bibliografii nebo textu práce
-nebo souboru \texttt{README.*}.
 
 %% -------------------------------------------------------------------
 

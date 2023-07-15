@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 JUL 2023 16:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 JUL 2023 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1031,13 +1031,13 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [9
 
 ]
-<graphics/thessenger_registration.png, id=263, 794.97pt x 310.91156pt>
+<graphics/thessenger_registration.png, id=259, 794.97pt x 310.91156pt>
 File: graphics/thessenger_registration.png Graphic file (type png)
 <use graphics/thessenger_registration.png>
 Package pdftex.def Info: graphics/thessenger_registration.png  used on input li
 ne 143.
 (pdftex.def)             Requested size: 409.50119pt x 160.15681pt.
-<graphics/thessenger_new_message.png, id=267, 711.4078pt x 402.00188pt>
+<graphics/thessenger_new_message.png, id=263, 711.4078pt x 402.00188pt>
 File: graphics/thessenger_new_message.png Graphic file (type png)
 <use graphics/thessenger_new_message.png>
 Package pdftex.def Info: graphics/thessenger_new_message.png  used on input lin
@@ -1049,14 +1049,14 @@ e 158.
                                                   \__shipout_drop_firstpage_...
 l.162 
        <./graphics/thessenger_registration.png (PNG copy)>]
-<graphics/thessenger_new_message_multi_select.png, id=272, 712.91344pt x 479.54
+<graphics/thessenger_new_message_multi_select.png, id=268, 712.91344pt x 479.54
 156pt>
 File: graphics/thessenger_new_message_multi_select.png Graphic file (type png)
 <use graphics/thessenger_new_message_multi_select.png>
 Package pdftex.def Info: graphics/thessenger_new_message_multi_select.png  used
  on input line 165.
 (pdftex.def)             Requested size: 409.50119pt x 275.44888pt.
-<graphics/thessenger_new_message_nothing_found.png, id=273, 713.66624pt x 384.6
+<graphics/thessenger_new_message_nothing_found.png, id=269, 713.66624pt x 384.6
 872pt>
 File: graphics/thessenger_new_message_nothing_found.png Graphic file (type png)
 
@@ -1076,13 +1076,13 @@ l.176
 l.176 
        <./graphics/thessenger_new_message.png (PNG copy)> <./graphics/thessenge
 r_new_message_multi_select.png (PNG copy)>]
-<graphics/thessenger_inbox.png, id=280, 711.4078pt x 286.82156pt>
+<graphics/thessenger_inbox.png, id=276, 711.4078pt x 286.82156pt>
 File: graphics/thessenger_inbox.png Graphic file (type png)
 <use graphics/thessenger_inbox.png>
 Package pdftex.def Info: graphics/thessenger_inbox.png  used on input line 184.
 
 (pdftex.def)             Requested size: 409.50119pt x 165.10492pt.
-<graphics/thessenger_outbox.png, id=281, 710.655pt x 253.69781pt>
+<graphics/thessenger_outbox.png, id=277, 710.655pt x 253.69781pt>
 File: graphics/thessenger_outbox.png Graphic file (type png)
 <use graphics/thessenger_outbox.png>
 Package pdftex.def Info: graphics/thessenger_outbox.png  used on input line 191
@@ -1100,13 +1100,13 @@ l.195
 l.195 
        <./graphics/thessenger_new_message_nothing_found.png (PNG copy)> <./grap
 hics/thessenger_inbox.png (PNG copy)>]
-<graphics/thessenger_message_detail.png, id=287, 714.41907pt x 302.63063pt>
+<graphics/thessenger_message_detail.png, id=283, 714.41907pt x 302.63063pt>
 File: graphics/thessenger_message_detail.png Graphic file (type png)
 <use graphics/thessenger_message_detail.png>
 Package pdftex.def Info: graphics/thessenger_message_detail.png  used on input 
 line 203.
 (pdftex.def)             Requested size: 409.50119pt x 173.46635pt.
-<graphics/thessenger_bin.png, id=289, 712.16063pt x 247.67531pt>
+<graphics/thessenger_bin.png, id=285, 712.16063pt x 247.67531pt>
 File: graphics/thessenger_bin.png Graphic file (type png)
 <use graphics/thessenger_bin.png>
 Package pdftex.def Info: graphics/thessenger_bin.png  used on input line 213.
@@ -1161,27 +1161,33 @@ Overfull \hbox (1.30309pt too wide) in paragraph at lines 1026--1030
 
 ] [39
 
-] [40
+]
+Overfull \hbox (15.56328pt too wide) in paragraph at lines 1250--1253
+\T1/lmr/m/n/12 zá-vis-lostí. P°esný po-stup, jak zá-vis-losti zís-kat je po-psa
+ný v sou-boru readme.md 
+ []
 
-] [41]
-Underfull \hbox (badness 6047) in paragraph at lines 1323--1324
+[40
+
+]
+Underfull \hbox (badness 6047) in paragraph at lines 1275--1276
 []\T1/lmr/m/n/12 JavaScript. Do-stupný z: [][]$\T1/pcr/m/n/12 https : / / devel
 oper . mozilla . org / en-[]US /
  []
 
 
-Underfull \hbox (badness 5533) in paragraph at lines 1327--1328
+Underfull \hbox (badness 5533) in paragraph at lines 1279--1280
 []\T1/lmr/m/n/12 Základní me-tody ob-jektu z ja-zyka Ja-vaScript. Do-stupný z: 
 [][]$\T1/pcr/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1327--1328
+Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
 \T1/pcr/m/n/12 / / developer . mozilla . org / en-[]US / docs / Web / JavaScrip
 t /
  []
 
-[42
+[41
 
 ]
 No file kidiplom.ind.
@@ -1194,8 +1200,8 @@ This document will not have a glossary.
 AED: lastpage setting LastPage
 (./kidiplom.aux) ) 
 Here is how much of TeX's memory you used:
- 23893 strings out of 479415
- 406927 string characters out of 5870760
+ 23890 strings out of 479415
+ 406911 string characters out of 5870760
  1035223 words of memory out of 5000000
  40879 multiletter control sequences out of 15000+600000
  544582 words of font info for 90 fonts, out of 8000000 for 9000
@@ -1210,10 +1216,10 @@ ts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (42 pages, 669460 bytes).
+Output written on kidiplom.pdf (41 pages, 667243 bytes).
 PDF statistics:
- 1310 PDF objects out of 1440 (max. 8388607)
- 1222 compressed objects within 13 object streams
- 562 named destinations out of 1000 (max. 500000)
- 467 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1296 PDF objects out of 1440 (max. 8388607)
+ 1209 compressed objects within 13 object streams
+ 559 named destinations out of 1000 (max. 500000)
+ 451 words of extra memory for PDF output out of 10000 (max. 10000000)
 
