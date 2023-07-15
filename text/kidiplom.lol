@@ -24,12 +24,12 @@
 \contentsline {lstlisting}{\numberline {24}SolidJS komponenta.}{26}{lstlisting.24}%
 \contentsline {lstlisting}{\numberline {25}SolidJS reaktivita.}{27}{lstlisting.25}%
 \contentsline {lstlisting}{\numberline {26}SolidJS createSignal.}{27}{lstlisting.26}%
-\contentsline {lstlisting}{\numberline {27}SolidJS createSignal s automatickou registrací odběratelů.}{28}{lstlisting.27}%
+\contentsline {lstlisting}{\numberline {27}SolidJS createSignal s~automatickou registrací odběratelů.}{28}{lstlisting.27}%
 \contentsline {lstlisting}{\numberline {28}SolidJS synchronní reaktivní aktualizace.}{29}{lstlisting.28}%
-\contentsline {lstlisting}{\numberline {29}SolidJS synchronní reaktivní aktualizace s batchingem.}{29}{lstlisting.29}%
+\contentsline {lstlisting}{\numberline {29}SolidJS synchronní reaktivní aktualizace s~batchingem.}{29}{lstlisting.29}%
 \contentsline {lstlisting}{\numberline {30}SolidJS naivní modifikace pole.}{30}{lstlisting.30}%
-\contentsline {lstlisting}{\numberline {31}SolidJS modifikace pole s pomocí signálu.}{31}{lstlisting.31}%
-\contentsline {lstlisting}{\numberline {32}SolidJS modifikace pole s pomocí skladu.}{32}{lstlisting.32}%
+\contentsline {lstlisting}{\numberline {31}SolidJS modifikace pole s~pomocí signálu.}{31}{lstlisting.31}%
+\contentsline {lstlisting}{\numberline {32}SolidJS modifikace pole s~pomocí skladu.}{32}{lstlisting.32}%
 \contentsline {lstlisting}{\numberline {33}Srovnání kódu Vue před sestavením.}{35}{lstlisting.33}%
 \contentsline {lstlisting}{\numberline {34}Srovnání kódu Vue po sestavení.}{35}{lstlisting.34}%
 \contentsline {lstlisting}{\numberline {35}Srovnání kódu SolidJS před sestavením.}{36}{lstlisting.35}%

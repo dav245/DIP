@@ -1210,13 +1210,13 @@ s~velikostí 69,9 kB.
 \end{kiconclusions}
 
 \begin{kiconclusions}[english]
-  With my experience with Vue i started writing the application in this framework. I~knew exactly what to expect and 
-  what to be wary of. I~was watching Svelte long time develop, so i took it next. Rewrite of the application from Vue 
+  With my experience with Vue i started writing the application in this framework. I knew exactly what to expect and 
+  what to be wary of. I was watching Svelte long time develop, so i took it next. Rewrite of the application from Vue 
   to Svelte was not as easy as expected. Both frameworks do handle reactive data in quite different ways so some parts
-  were needed to be edited even logically. I~was the most surprised with SolidJS. Rewrite from Vue went really smoothly
+  were needed to be edited even logically. I was the most surprised with SolidJS. Rewrite from Vue went really smoothly
   since both reactive systems are quire similar.
 
-  I~was honestly expecting a little more from Svelte than what it delivered. Watching reactivity based on assignments
+  I was honestly expecting a little more from Svelte than what it delivered. Watching reactivity based on assignments
   sounds good on the paper, but in reality it was quite a hassle. On the other hand SolidJS was a pleasant surprise. 
   It has clear guidelines really similar to Vue just without the need for virtual DOM. That means smaller applications
   in size and less CPU intensive. It does go about reactivity really elegantly and precisly. No other compared framework

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 JUL 2023 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 JUL 2023 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1164,19 +1164,19 @@ Overfull \hbox (1.30309pt too wide) in paragraph at lines 1026--1030
 ] [40
 
 ] [41]
-Underfull \hbox (badness 6047) in paragraph at lines 1311--1312
+Underfull \hbox (badness 6047) in paragraph at lines 1323--1324
 []\T1/lmr/m/n/12 JavaScript. Do-stupný z: [][]$\T1/pcr/m/n/12 https : / / devel
 oper . mozilla . org / en-[]US /
  []
 
 
-Underfull \hbox (badness 5533) in paragraph at lines 1315--1316
+Underfull \hbox (badness 5533) in paragraph at lines 1327--1328
 []\T1/lmr/m/n/12 Základní me-tody ob-jektu z ja-zyka Ja-vaScript. Do-stupný z: 
 [][]$\T1/pcr/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1315--1316
+Underfull \hbox (badness 10000) in paragraph at lines 1327--1328
 \T1/pcr/m/n/12 / / developer . mozilla . org / en-[]US / docs / Web / JavaScrip
 t /
  []
@@ -1210,10 +1210,10 @@ ts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (42 pages, 668276 bytes).
+Output written on kidiplom.pdf (42 pages, 669460 bytes).
 PDF statistics:
- 1322 PDF objects out of 1440 (max. 8388607)
- 1234 compressed objects within 13 object streams
+ 1310 PDF objects out of 1440 (max. 8388607)
+ 1222 compressed objects within 13 object streams
  562 named destinations out of 1000 (max. 500000)
  467 words of extra memory for PDF output out of 10000 (max. 10000000)
 
