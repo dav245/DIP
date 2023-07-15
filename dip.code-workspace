@@ -17,11 +17,25 @@
     },
     {
       "path": "svelte"
+    },
+    {
+      "path": "text"
     }
   ],
   "settings": {
     "i18n-ally.localesPaths": ["backend/lang"],
-    "cSpell.words": ["Thessenger"],
+    "cSpell.words": [
+      "backendu",
+      "frameworcích",
+      "frameworku",
+      "frameworků",
+      "frameworky",
+      "Frontendové",
+      "frontendový",
+      "frontendových",
+      "frontendu",
+      "Thessenger"
+    ],
     "typescript.preferences.importModuleSpecifier": "shortest"
   }
 }

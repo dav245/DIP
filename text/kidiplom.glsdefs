@@ -1,0 +1,28 @@
+\glsdefs@newdocentry{UPOL}%
+{%
+name={UPOL},%
+sort={UPOL},%
+type={acronym},%
+first={Univerzita Palack\'eho v~Olomouci\glsspace (UPOL)},%
+firstplural={\kitextunivcz \acrpluralsuffix \glsspace (UPOL\acrpluralsuffix )},%
+text={UPOL},%
+plural={UPOL\acrpluralsuffix },%
+description={Univerzita Palack\'eho v~Olomouci},%
+descriptionplural={\kitextunivcz \acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Univerzita Palack\'eho v~Olomouci},%
+longplural={Univerzita Palack\'eho v~Olomoucis},%
+short={UPOL},%
+shortplural={UPOLs},%
+counter={page},%
+parent={},%
+%
+}%
+

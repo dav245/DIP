@@ -1,0 +1,53 @@
+\babel@toc {czech}{}\relax 
+\contentsline {section}{\numberline {1}Úvod}{9}{section.1}%
+\contentsline {subsection}{\numberline {1.1}O autorovi}{9}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}O aplikaci Thessenger}{9}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Mapa aplikace}{9}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Registrace účtu}{10}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Nová zpráva}{10}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Přijaté a odeslané zprávy}{12}{subsubsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {1.2.5}Detail zprávy}{13}{subsubsection.1.2.5}%
+\contentsline {subsubsection}{\numberline {1.2.6}Koš}{13}{subsubsection.1.2.6}%
+\contentsline {section}{\numberline {2}Implementace}{15}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Adresářová struktura}{15}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Backend}{15}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Common}{16}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}CSS}{17}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Ts/validation}{17}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Porovnávané frameworky}{18}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Vue 3}{18}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Komponenty}{19}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Proxy}{20}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Proxy ve Vue}{21}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Options API}{21}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Svelte}{22}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Komponenty}{22}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Reaktivita}{23}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Reaktivita mimo komponenty}{24}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}SolidJS}{26}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Komponenty}{26}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Reaktivita}{26}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Proxy objekty}{29}{subsubsection.3.3.3}%
+\contentsline {section}{\numberline {4}Srovnání frameworků}{33}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Z pohledu programátora}{33}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Vue}{33}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Svelte}{33}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}SolidJS}{33}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Reaktivita}{33}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Vue}{33}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Svelte}{34}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}SolidJS}{34}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Vygenerovaný kód}{34}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Vue}{34}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}SolidJS}{36}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Svelte}{36}{subsubsection.4.3.3}%
+\contentsline {section}{Z\'av\v er}{38}{section*.4}%
+\babel@toc {czech}{}\relax 
+\babel@toc {czech}{}\relax 
+\contentsline {section}{Conclusions}{39}{section*.6}%
+\babel@toc {english}{}\relax 
+\babel@toc {czech}{}\relax 
+\contentsline {section}{\numberline {A}První příloha}{40}{appendix.A}%
+\contentsline {section}{\numberline {B}Druhá příloha}{40}{appendix.B}%
+\contentsline {section}{\numberline {C}Obsah elektronických dat}{40}{appendix.C}%
+\contentsline {section}{Literatura}{42}{section*.8}%

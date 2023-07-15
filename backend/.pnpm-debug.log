@@ -1,0 +1,14 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ERR_PNPM_NO_PKG_MANIFEST",
+    "err": {
+      "name": "pnpm",
+      "message": "No package.json found in /var/www/dip/backend",
+      "code": "ERR_PNPM_NO_PKG_MANIFEST",
+      "stack": "pnpm: No package.json found in /var/www/dip/backend\n    at handler (/home/dav245/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:121589:17)\n    at async /home/dav245/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:182687:21\n    at async run (/home/dav245/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:182661:34)\n    at async runPnpm (/home/dav245/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:182879:5)\n    at async /home/dav245/.npm-global/lib/node_modules/pnpm/dist/pnpm.cjs:182871:7"
+    }
+  }
+}
