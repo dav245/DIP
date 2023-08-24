@@ -2,6 +2,12 @@
 
 This thesis should compare different approaches to reactivity, DOM syncing and component design of three selected frameworks. [Vue 3](https://vuejs.org/), [SolidJS](https://www.solidjs.com/), [Svelte](https://svelte.dev/).
 
+## Testing env online
+Application runs under
+- http://vue.hruza.student.inf.upol.cz/
+- http://svelte.hruza.student.inf.upol.cz/
+- http://solidjs.hruza.student.inf.upol.cz/
+
 ## Contents of repository
 
 - Backend - contains server written on top of [Laravel 9](https://laravel.com/). It is simple messaging app

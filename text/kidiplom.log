@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  15 JUL 2023 17:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.31)  6 AUG 2023 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -613,7 +613,7 @@ File: csquotes.cfg
 ))
 Package csquotes Info: Redefining quotation style 'czech'.
 Package csquotes Info: Redefining alias 'slovak' -> 'czech'.
-Package hyperref Info: Option `colorlinks' set `true' on input line 297.
+Package hyperref Info: Option `colorlinks' set `false' on input line 297.
 Package hyperref Info: Option `linktocpage' set `true' on input line 307.
 Package hyperref Info: Option `pageanchor' set `true' on input line 307.
 Package hyperref Info: Option `breaklinks' set `true' on input line 307.
@@ -712,7 +712,6 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 
 
 Writing index file kidiplom.idx
-\c@indexno=\count338
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -740,7 +739,7 @@ Package: amsthm 2020/05/29 v2.20.6
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2020/08/01 v0.72
 \thmt@toks=\toks45
-\c@thmt@dummyctr=\count339
+\c@thmt@dummyctr=\count338
 
 (/usr/share/texlive/texmf-dist/tex/latex/thmtools/thm-patch.sty
 Package: thm-patch 2020/08/01 v0.72
@@ -774,7 +773,7 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             is not a known style key.
 (thmtools)             Will pass this to every \declaretheorem
 (thmtools)             that uses `style=kiproofstyle' on input line 724.
-\c@definition=\count340
+\c@definition=\count339
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -782,9 +781,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count341
-\Gm@cntv=\count342
-\c@Gm@tempcnt=\count343
+\Gm@cnth=\count340
+\Gm@cntv=\count341
+\c@Gm@tempcnt=\count342
 \Gm@bindingoffset=\dimen181
 \Gm@wd@mp=\dimen182
 \Gm@odd@mp=\dimen183
@@ -816,7 +815,7 @@ LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count344
+\c@float@type=\count343
 \float@exts=\toks49
 \float@box=\box107
 \@float@everytoks=\toks50
@@ -829,15 +828,15 @@ Package: expl3 2022-01-21 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count345
+\l__color_backend_stack_int=\count344
 \l__pdf_internal_box=\box109
 ))
 Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count346
-\l__lipsum_a_int=\count347
-\l__lipsum_b_int=\count348
+\g__lipsum_par_int=\count345
+\l__lipsum_a_int=\count346
+\l__lipsum_b_int=\count347
 
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
 Package csquotes Info: Checking for multilingual support...
@@ -847,37 +846,37 @@ Package csquotes Info: Enabling multilingual quotes.
 (./kidiplom.aux)
 \openout1 = `kidiplom.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count349
+\scratchcounter=\count348
 \scratchdimen=\dimen189
 \scratchbox=\box110
-\nofMPsegments=\count350
-\nofMParguments=\count351
+\nofMPsegments=\count349
+\nofMParguments=\count350
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count352
+\MPscratchCnt=\count351
 \MPscratchDim=\dimen190
-\MPnumerator=\count353
-\makeMPintoPDFobject=\count354
+\MPnumerator=\count352
+\makeMPintoPDFobject=\count353
 \everyMPtoPDFconversion=\toks52
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -888,7 +887,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 83.
+Package hyperref Info: Link coloring OFF on input line 82.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -899,12 +898,12 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count355
+\c@section@level=\count354
 )
-LaTeX Info: Redefining \ref on input line 83.
-LaTeX Info: Redefining \pageref on input line 83.
-LaTeX Info: Redefining \nameref on input line 83.
-\c@lstlisting=\count356
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
+\c@lstlisting=\count355
 
 (./kidiplom.glsdefs)
 *geometry* detected driver: pdftex
@@ -942,54 +941,54 @@ LaTeX Info: Redefining \nameref on input line 83.
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 83.
+(lastpage)             ! on input line 82.
 <graphics/kititle-cz-nofont.pdf, id=4, 375.4025pt x 72.27pt>
 File: graphics/kititle-cz-nofont.pdf Graphic file (type pdf)
 <use graphics/kititle-cz-nofont.pdf>
-Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 88.
+Package pdftex.def Info: graphics/kititle-cz-nofont.pdf  used on input line 87.
 
 (pdftex.def)             Requested size: 225.24323pt x 43.36232pt.
-<graphics/UP_znak.pdf, id=5, 101.59215pt x 101.59215pt>
-File: graphics/UP_znak.pdf Graphic file (type pdf)
-<use graphics/UP_znak.pdf>
-Package pdftex.def Info: graphics/UP_znak.pdf  used on input line 88.
+<graphics/UP_znak_outline.pdf, id=5, 101.59215pt x 101.59215pt>
+File: graphics/UP_znak_outline.pdf Graphic file (type pdf)
+<use graphics/UP_znak_outline.pdf>
+Package pdftex.def Info: graphics/UP_znak_outline.pdf  used on input line 87.
 (pdftex.def)             Requested size: 101.59187pt x 101.59187pt.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 8
-8.
+7.
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 8
-8.
+7.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-88.
+87.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-88.
+87.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 88.
+(Font)              <12> on input line 87.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 88.
+(Font)              <8> on input line 87.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 88.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 88.
+(Font)              <6> on input line 87.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 87.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 88.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -999,9 +998,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `kidiplom.ist'.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./graphics/kititle-cz-nofo
-nt.pdf> <./graphics/UP_znak.pdf>]
+nt.pdf> <./graphics/UP_znak_outline.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 88.
+(Font)              <10.95> on input line 87.
  [2] [3
 
 ] [4
@@ -1025,164 +1024,164 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  [8]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-26.
+24.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [9
 
 ]
-<graphics/thessenger_registration.png, id=259, 794.97pt x 310.91156pt>
+<graphics/thessenger_registration.png, id=256, 794.97pt x 310.91156pt>
 File: graphics/thessenger_registration.png Graphic file (type png)
 <use graphics/thessenger_registration.png>
 Package pdftex.def Info: graphics/thessenger_registration.png  used on input li
-ne 143.
+ne 141.
 (pdftex.def)             Requested size: 409.50119pt x 160.15681pt.
-<graphics/thessenger_new_message.png, id=263, 711.4078pt x 402.00188pt>
+<graphics/thessenger_new_message.png, id=260, 711.4078pt x 402.00188pt>
 File: graphics/thessenger_new_message.png Graphic file (type png)
 <use graphics/thessenger_new_message.png>
 Package pdftex.def Info: graphics/thessenger_new_message.png  used on input lin
-e 158.
+e 156.
 (pdftex.def)             Requested size: 409.50119pt x 231.4069pt.
  [10pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.162 
+l.160 
        <./graphics/thessenger_registration.png (PNG copy)>]
-<graphics/thessenger_new_message_multi_select.png, id=268, 712.91344pt x 479.54
+<graphics/thessenger_new_message_multi_select.png, id=265, 712.91344pt x 479.54
 156pt>
 File: graphics/thessenger_new_message_multi_select.png Graphic file (type png)
 <use graphics/thessenger_new_message_multi_select.png>
 Package pdftex.def Info: graphics/thessenger_new_message_multi_select.png  used
- on input line 165.
+ on input line 163.
 (pdftex.def)             Requested size: 409.50119pt x 275.44888pt.
-<graphics/thessenger_new_message_nothing_found.png, id=269, 713.66624pt x 384.6
+<graphics/thessenger_new_message_nothing_found.png, id=266, 713.66624pt x 384.6
 872pt>
 File: graphics/thessenger_new_message_nothing_found.png Graphic file (type png)
 
 <use graphics/thessenger_new_message_nothing_found.png>
 Package pdftex.def Info: graphics/thessenger_new_message_nothing_found.png  use
-d on input line 172.
+d on input line 170.
 (pdftex.def)             Requested size: 409.50119pt x 220.73557pt.
  [11pdfTeX warning (ext4): destination with the same identifier (name{figure.2}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.176 
+l.174 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.176 
+l.174 
        <./graphics/thessenger_new_message.png (PNG copy)> <./graphics/thessenge
 r_new_message_multi_select.png (PNG copy)>]
-<graphics/thessenger_inbox.png, id=276, 711.4078pt x 286.82156pt>
+<graphics/thessenger_inbox.png, id=273, 711.4078pt x 286.82156pt>
 File: graphics/thessenger_inbox.png Graphic file (type png)
 <use graphics/thessenger_inbox.png>
-Package pdftex.def Info: graphics/thessenger_inbox.png  used on input line 184.
+Package pdftex.def Info: graphics/thessenger_inbox.png  used on input line 182.
 
 (pdftex.def)             Requested size: 409.50119pt x 165.10492pt.
-<graphics/thessenger_outbox.png, id=277, 710.655pt x 253.69781pt>
+<graphics/thessenger_outbox.png, id=274, 710.655pt x 253.69781pt>
 File: graphics/thessenger_outbox.png Graphic file (type png)
 <use graphics/thessenger_outbox.png>
-Package pdftex.def Info: graphics/thessenger_outbox.png  used on input line 191
+Package pdftex.def Info: graphics/thessenger_outbox.png  used on input line 189
 .
 (pdftex.def)             Requested size: 409.50119pt x 146.19254pt.
  [12pdfTeX warning (ext4): destination with the same identifier (name{figure.4}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.195 
+l.193 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.195 
+l.193 
        <./graphics/thessenger_new_message_nothing_found.png (PNG copy)> <./grap
 hics/thessenger_inbox.png (PNG copy)>]
-<graphics/thessenger_message_detail.png, id=283, 714.41907pt x 302.63063pt>
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 19
+6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+<graphics/thessenger_message_detail.png, id=280, 714.41907pt x 302.63063pt>
 File: graphics/thessenger_message_detail.png Graphic file (type png)
 <use graphics/thessenger_message_detail.png>
 Package pdftex.def Info: graphics/thessenger_message_detail.png  used on input 
-line 203.
+line 201.
 (pdftex.def)             Requested size: 409.50119pt x 173.46635pt.
-<graphics/thessenger_bin.png, id=285, 712.16063pt x 247.67531pt>
+<graphics/thessenger_bin.png, id=282, 712.16063pt x 247.67531pt>
 File: graphics/thessenger_bin.png Graphic file (type png)
 <use graphics/thessenger_bin.png>
-Package pdftex.def Info: graphics/thessenger_bin.png  used on input line 213.
+Package pdftex.def Info: graphics/thessenger_bin.png  used on input line 211.
 (pdftex.def)             Requested size: 409.50119pt x 142.41597pt.
  [13pdfTeX warning (ext4): destination with the same identifier (name{figure.6}
 ) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.217 
+l.215 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.217 
+l.215 
        <./graphics/thessenger_outbox.png (PNG copy)> <./graphics/thessenger_mes
 sage_detail.png (PNG copy)>] [14pdfTeX warning (ext4): destination with the sam
 e identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.218 \newpage
+l.216 \newpage
                <./graphics/thessenger_bin.png (PNG copy)>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 22
-7.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 240.
+nput line 238.
  [15]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 306.
+(Font)              <10> on input line 304.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 306.
+(Font)              <7> on input line 304.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 306.
+(Font)              <5> on input line 304.
  [16] [17]
-[18] [19] [20] [21] [22]
-Overfull \hbox (4.7214pt too wide) in paragraph at lines 618--620
+[18] [19] [20]
+Overfull \hbox (0.16861pt too wide) in paragraph at lines 519--524
+\T1/lmr/m/n/12 pad¥ Vue tato funkce zp·-sobí kon-t-rolu vir-tu-ál-ního DOMu opr
+oti re-ál-nému DOMu
+ []
+
+[21] [22]
+Overfull \hbox (4.7214pt too wide) in paragraph at lines 616--618
 []\T1/lmr/m/n/12 Kdykoli se pro-m¥nná \T1/pcr/m/n/12 count \T1/lmr/m/n/12 zm¥ní
 , nejen ºe se p°e-po-£ítá pro-m¥nná \T1/pcr/m/n/12 doubled\T1/lmr/m/n/12 ,
  []
 
-[23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
-Overfull \hbox (1.30309pt too wide) in paragraph at lines 1026--1030
-\T1/lmr/m/n/12 Ve Vue [[]] mo-hou být re-ak-tivní hod-noty de-fi-no-vané po-moc
-í \T1/pcr/m/n/12 ref \T1/lmr/m/n/12 nebo \T1/pcr/m/n/12 reactive\T1/lmr/m/n/12 
-.
- []
-
-[33] [34] [35] [36] [37] [38
+[23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36] [37]
+[38
 
 ] [39
 
-]
-Overfull \hbox (15.56328pt too wide) in paragraph at lines 1250--1253
-\T1/lmr/m/n/12 zá-vis-lostí. P°esný po-stup, jak zá-vis-losti zís-kat je po-psa
-ný v sou-boru readme.md 
- []
-
-[40
+] [40
 
 ]
-Underfull \hbox (badness 6047) in paragraph at lines 1275--1276
-[]\T1/lmr/m/n/12 JavaScript. Do-stupný z: [][]$\T1/pcr/m/n/12 https : / / devel
-oper . mozilla . org / en-[]US /
+Underfull \hbox (badness 6047) in paragraph at lines 1272--1273
+[]\T1/lmr/m/n/12 JavaScript. Do-stupný z: []$\T1/pcr/m/n/12 https : / / develop
+er . mozilla . org / en-[]US /
  []
 
 
-Underfull \hbox (badness 5533) in paragraph at lines 1279--1280
+Underfull \hbox (badness 10000) in paragraph at lines 1274--1275
+[]\T1/lmr/m/n/12 JSX. Do-stupný z: []$\T1/pcr/m/n/12 https : / / www . typescri
+ptlang . org / docs /
+ []
+
+
+Underfull \hbox (badness 5533) in paragraph at lines 1278--1279
 []\T1/lmr/m/n/12 Základní me-tody ob-jektu z ja-zyka Ja-vaScript. Do-stupný z: 
-[][]$\T1/pcr/m/n/12 https :
+[]$\T1/pcr/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1279--1280
+Underfull \hbox (badness 10000) in paragraph at lines 1278--1279
 \T1/pcr/m/n/12 / / developer . mozilla . org / en-[]US / docs / Web / JavaScrip
 t /
  []
@@ -1201,9 +1200,9 @@ AED: lastpage setting LastPage
 (./kidiplom.aux) ) 
 Here is how much of TeX's memory you used:
  23890 strings out of 479415
- 406911 string characters out of 5870760
- 1035223 words of memory out of 5000000
- 40879 multiletter control sequences out of 15000+600000
+ 407003 string characters out of 5870760
+ 1035341 words of memory out of 5000000
+ 40877 multiletter control sequences out of 15000+600000
  544582 words of font info for 90 fonts, out of 8000000 for 9000
  428 hyphenation exceptions out of 8191
  123i,10n,121p,2606b,2095s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1216,10 +1215,10 @@ ts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmri12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrb
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on kidiplom.pdf (41 pages, 667243 bytes).
+Output written on kidiplom.pdf (41 pages, 664659 bytes).
 PDF statistics:
- 1296 PDF objects out of 1440 (max. 8388607)
- 1209 compressed objects within 13 object streams
- 559 named destinations out of 1000 (max. 500000)
+ 1247 PDF objects out of 1440 (max. 8388607)
+ 1161 compressed objects within 12 object streams
+ 560 named destinations out of 1000 (max. 500000)
  451 words of extra memory for PDF output out of 10000 (max. 10000000)
 

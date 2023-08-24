@@ -8,7 +8,7 @@
 \documentclass[
   master,
   program=ainf,
-  %  printversion,
+  printversion,
   % biblatex,
   %  language=english,
   %  font=sans,
@@ -47,11 +47,10 @@
 %% Anotace práce, včetně anglické (obvykle překlad z jazyka
 %% práce). Jeden odstavec!
 \annotation{Cílem této diplomové práce je srovnání reaktivních přístupů JavaScriptových frameworků
-Vue, Svelte a SolidJS. Součástí je jednoduchá aplikace představující poštovního klienta v~každém frameworku
+Vue, Svelte a SolidJS. Součástí práce je jednoduchá aplikace, představující poštovního klienta, vytvořená v~každém frameworku
 pro demonstartivní účely.}
 
-\annotation[english]{
-  The goal of this thesis is to compare reactive data approach of JavaScript frameworks Vue, Svelte and SolidJS.
+\annotation[english]{The goal of this thesis is to compare reactive data approach of JavaScript frameworks Vue, Svelte and SolidJS.
   Part of thesis is simple email client application written in each framework for demonstration purpose. 
 }
 
@@ -59,7 +58,7 @@ pro demonstartivní účely.}
 \keywords{reaktivita; frontend; frameworky}
 \keywords[english]{reactivity; frontend; frameworks}
 
-%% Volitelná specifikace příloh textu práce, i anglicky. Výchozí je
+%% Volitelná specifikace příloh textu práce, i~anglicky. Výchozí je
 %% 'elektronická data v systému katedry informatiky / electronic data
 %% in system of department of computer science'.
 %\supplements{nejlepší software všech dob}
@@ -67,7 +66,7 @@ pro demonstartivní účely.}
 
 %% Volitelné poděkování. Stručné! Výchozí je prázdné. Makro nemá
 %% nepovinný parametr pro uvedení jazyka.
-\thanks{Mnohorát děkuji panu RNDr. Martinu Trnečkovi, Ph.D. za vedení a invostovaný čas. }
+\thanks{Mnohorát děkuji panu RNDr. Martinu Trnečkovi, Ph.D. za vedení a investovaný čas. }
 
 %% Cesta k souboru s bibliografií pro její sazbu pomocí BibLaTeXu
 %% (zvolenou nepovinným parametrem biblatex makra
@@ -88,7 +87,7 @@ pro demonstartivní účely.}
 \maketitle
 
 %% Vlastní text závěrečné práce. Pro povinné závěry, před přílohami,
-%% použijte prostředí kiconclusions. Povinná je i příloha s obsahem
+%% použijte prostředí kiconclusions. Povinná je i~příloha s obsahem
 %% elektronických dat.
 %% -------------------------------------------------------------------
 
@@ -96,22 +95,21 @@ pro demonstartivní účely.}
 S~mírnou nadsázkou lze tvrdit, že není týden, kdy by se neobjevil nový frontendový
 framework. Oblast frontendu je neustále velmi aktivně zlepšována. Jednou z~hlavních
 charakteristik frameworků je reaktivní systém frameworku. V~této práci se podíváme 
-na tři odlišené přístupy reaktivity. Reaktivitou se obecně myslí deklarativní přístup
-k~programování. Pouhou změnou hodnoty proměnné se daná změna projeví všude, kde je 
-proměnná použita.
+na tři odlišené přístupy reaktivity a to konkrétně ve frameworcích Vue, Svelte a SolidJS.
+Reaktivitou se obecně myslí deklarativní přístup k~programování. Pouhou změnou hodnoty proměnné
+se daná změna projeví všude, kde je proměnná použita.
 
 \subsection{O~autorovi}
-V~rychlosti si uvedeme autora, jelikož má předešlé zkušenosti v~tomto oboru.
+V~rychlosti si uvedeme autora, jelikož má předešlé zkušenosti v~tomto oboru, které ovlivňují výsledné srovnání jednotlivých frameworků.
 Autor diplomové práce pracuje pět let jako full--time full--stack developer.
 Vyvíjí interní administrační portály a eshopové jádro. Po celou dobu kariéry
-využívá na frontendu framework Vue \cite{vue}. V~počátcích začínal na Vue 2 \cite{vue2} a v~posledních
-dvou letech Vue 3 \cite{vue}. Na backendu pracuje pouze v~jazyce PHP \cite{php} s~pomocí frameworku
-Laravel \cite{laravel}. 
+využívá na frontendu framework Vue. V~počátcích začínal na Vue 2~\cite{vue2} a v~posledních
+dvou letech Vue 3. Na backendu pracuje pouze v~jazyce PHP~\cite{php} s~pomocí frameworku
+Laravel~\cite{laravel}. 
 
 \subsection{O~aplikaci Thessenger}
-Zadání diplomové práce je demonstrovat přístupy několika frontendových
-frameworků. Pro tento účel vznikla aplikace Thessenger. Jedná se aplikaci
-simulující poštovního klienta.
+Vznikla aplikace Thessenger, která bude sloužit pro demonstraci přístupů jednotlivých frameworků. 
+Jedná se aplikaci simulující poštovního klienta.
 
 Uživatelé se mohou registrovat do systému pomocí uživatelského jména a hesla.
 Následně mohou ze systému odesílat v~rámci systému ostatním uživatelům zprávy.
@@ -176,8 +174,8 @@ obrázku~\ref{fig:new_message_filtration}.
 
 \subsubsection{Přijaté a odeslané zprávy}
 Jedná se o~totožné stránky s~filtrovanými daty. Zobrazí se zde seznam všech
-přijatých obrázek~\ref{fig:inobx} / odeslaných obrázek~\ref{fig:outbox} zpráv s~možností přechodu na detail 
-zprávy a možnosti smazání zprávy.
+přijatých (obrázek~\ref{fig:inobx}) / odeslaných (obrázek~\ref{fig:outbox}) zpráv s~možností přechodu na detail 
+zprávy a možností smazání zprávy.
 
 \begin{figure}[H]
   \centering
@@ -195,7 +193,7 @@ zprávy a možnosti smazání zprávy.
 
 \subsubsection{Detail zprávy}
 Detail zobrazí celý obsah zprávy, jak můžeme vidět na obrázku~\ref{fig:message_detail}. Obsah
-zprávy může být triviálně formátován pomocí nových řádků a mezer. Samotný výpis je obalen v~pre
+zprávy může být triviálně formátován pomocí nových řádků a mezer. Samotný výpis je obalen v~{\tt pre}
 značce a tudíž zachovává mezery.
 
 \begin{figure}[H]
@@ -222,7 +220,7 @@ Vzhledem k~tomu, že máme tři instance té samé aplikace psané pouze v~různ
 frameworcích je očekáváno velké množství stejného kódu.
 
 \subsection{Adresářová struktura}
-Aplikace je logicky rozdělena podle frameworků s~dodatečnou složkou pro společný kód.
+Aplikace je logicky rozdělena podle frameworků s~dodatečnou složkou pro společný kód:
 \begin{itemize}
   \item {\tt backend} - slouží pro manipulaci a ukládání dat
   \item {\tt common} - slučuje stejnou funkcionalitu frontendových frameworků
@@ -232,7 +230,7 @@ Aplikace je logicky rozdělena podle frameworků s~dodatečnou složkou pro spol
 \end{itemize}
 
 \subsection{Backend}
-Na backend byl zvolen framework Laravel \cite{laravel}. Vývoj začal právě tímto projektem a
+Na backend byl zvolen framework Laravel~\cite{laravel}. Vývoj začal právě touto částí a
 k~ověření funkčnosti byly využity unit testy. Jediná zajímavá záležitost
 z~pohledu frontendu je vystavení všech dostupných endpointů do JSON API. Po
 zavolání {\tt api/route/routes} dostaneme odpověď ve formátu zobrazeném ve zdrojovém kódu~\ref{code:routes}:
@@ -260,12 +258,12 @@ ve zdrojovém kódu~\ref{code:endpoints}.
 \end{kicode}
 
 Díky tomu mají všechny frontendy staticky definované endpointy. Zároveň se
-z~jednotlivých URL pomocí regexu získá i informace o~parametrech. Díky tomu 
+z~jednotlivých URL pomocí regexu získá i~informace o~parametrech. Díky tomu 
 se zmenšuje množství informací, které je nutné znát pro člověka na frontendu.
 Pohledem na soubor s~endpointy získá přehled o~tom, co backend umožňuje a jaké
 parametry jednotlivé endpointy požadují. Při změně endpointů by nám statická analýza
 řekla, jestli využíváme všechny endpointy korektně. Navíc máme možnost na backendu
-změnit v~případě potřeby URL mez nutnosti úpravy frontendu.
+změnit v~případě potřeby URL bez nutnosti úpravy frontendu.
 
 \subsection{Common}
 Adresář společných funkcionalit jednotlivých frontendových implementací. Dělí se
@@ -295,20 +293,20 @@ reaktivní aktualizaci dat jinak.
   setCount(42);
 \end{kicode}
 
-Jak je ze zdrojového kódu~\ref{code:reactive_variables} vidět, Vue \cite{vue} využívá funkci
+Jak je ze zdrojového kódu~\ref{code:reactive_variables} vidět, Vue využívá funkci
 {\tt ref} pro vytvoření reaktivního objektu,
-SolidJS \cite{solidjs} používá funkci {\tt createSignal} pro získání getteru a setteru a Svelte \cite{svelte}
+SolidJS používá funkci {\tt createSignal} pro získání getteru a setteru a Svelte
 využívá reaktivitu na základě přiřazení. 
 
 Zároveň má každý framework řešené komponenty\footnote{Komponenty slouží jako
   základní stavební blok. Definují, jak se mají vykreslit, mají svůj interní
   stav a dokáží upravit své chování na základě vstupních parametrů nebo
   oznámit změny pomocí událostí.} a komunikaci mezi nimi také jinak. Primárně
-nás pro naše účely zajímá kontextuální předávání informací\footnote{V
+nás pro naše účely zajímá kontextuální předávání informací\footnote{Ve
   složitější struktuře komponent by mohlo být velmi náročné přeposílat data a
-  události N úrovní hluboko. Kontextuální předávání dat pak umožňuje
+  události N úrovní hluboko. Kontextuální předávání dat nám umožňuje
 v~komponentě poskytnout data a každá komponenta, která je jakkoli vzdáleným
-  potomkem smí tato data získat.} mezi komponentami. Jednotlivé implementace 
+  potomkem, smí tato data získat.} mezi komponentami. Jednotlivé implementace 
   jsou demonstrovány ve zdrojovém kódu~\ref{code:contextual_api}.
 
   \begin{kicode}{JavaScript}{code:contextual_api}{Kontextuální API.}
@@ -349,18 +347,18 @@ odeslán.
 Nejprve si představíme jednotlivé frameworky. Všechny mají společné jedno --
 snaží se sblížit datovou a vizuální stránku. Pokud bychom tvořili větší
 interaktivní stránku, velmi rychle dojdeme k~závěru, že je vcelku náročné
-sledovat kde se která data zobrazují a jakým způsobem se modifikují. Představme
+sledovat, kde se která data zobrazují a jakým způsobem se modifikují. Představme
 si jednoduchý příklad, kdy chceme po stisknutí tlačítka navýšit hodnotu
-interního čítače, který začíná na nule a zobrazit tuto hodnotu v~divu. V~čistém
-JavaScriptu \cite{js} bychom museli po načtení stránky získat podle statických id
+interního čítače, který začíná na nule a zobrazit tuto hodnotu v~elementu {\tt div}. V~čistém
+JavaScriptu~\cite{js} bychom museli po načtení stránky získat podle statických id
 referenci na tlačítko a zobrazovací {\tt div}. Vytvořili bychom proměnnou {\tt count} a
 nastavili ji na nulu. Museli bychom zaregistrovat odposlech události stisku
 tlačítka myši na elementu tlačítka. V~této události bychom mohli zároveň
-upravit hodnotu zobrazovacího divu na současnou hodnotu proměnné {\tt count}. Už
+upravit hodnotu zobrazovacího elementu {\tt div} na současnou hodnotu proměnné {\tt count}. Už
 v~takto jednoduchém případě vidíme, že tento přístup není nejpřímočařejší.
-Při pohledu na html nevidíme nic, co by nám říkalo, že tlačítko má navázanou
-událost stisknutí tlačítka, nebo že obsah zobrazovacího divu bude upraven.
-Naopak při pohledu na JavaScript \cite{js} zase nevidíme, s~jakými prvky manipulujeme.
+Při pohledu na HTML kód nevidíme nic, co by nám říkalo, že tlačítko má navázanou
+událost stisknutí tlačítka, nebo že obsah zobrazovacího elementu {\tt div} bude upraven.
+Naopak při pohledu na JavaScript~\cite{js} zase nevidíme, s~jakými prvky manipulujeme.
 
 Zde přichází na pomoc frameworky. Každý definuje způsob, jak deklarativně
 pracovat s~daty přímo v~šabloně. Základním stavebním blokem jsou komponenty.
@@ -374,19 +372,19 @@ Samotné komponenty nám umožňují vytvářet znovupoužitelné části kódu,
 abychom opravdu vyřešili problém s~neviditelným tokem dat, potřebujeme ještě
 reaktivní data. Reaktivita je způsob, jak při změně proměnné implicitně
 aktualizovat všechna místa, kde je tato proměnná použita. Nejedná se pouze
-o~šablony, ale například i proměnné odvozené. 
+o~šablony, ale například i o~proměnné odvozené. 
 
 Dejme tomu, že máme reaktivní proměnnou {\tt x}. Můžeme vytvořit proměnnou {\tt y}, která
 představuje například dvojnásobek proměnné {\tt x}. Pokud změníme hodnotu proměnné {\tt x},
-musí se přepočítat i {\tt y} a všechna místa, kde je proměnná {\tt y} použita. Způsob, jakým
+musí se přepočítat i~{\tt y} a všechna místa, kde je proměnná {\tt y} použita. Způsob, jakým
 jednotlivé frameworky tento problém řeší se u~každého zvoleného frameworku liší.
 
 \subsection{Vue 3}
-Vue \cite{vue} využívá k~dosažení rekativity virtuální DOM a proxy objekty \cite{proxy}. K~jednotlivým
+Vue~\cite{vue} využívá k~dosažení rekativity virtuální DOM a proxy objekty~\cite{proxy}. K~jednotlivým
 pojmům se dostaneme po ukázce jednoduchého příkladu Vue komponenty.
 
 \subsubsection{Komponenty}
-Vue \cite{vue} má dva způsoby, jak definovat komponenty. Pomocí funkce a pomocí souboru 
+Vue má dva způsoby, jak definovat komponenty. Pomocí funkce a pomocí souboru 
 s~koncovkou {\tt .vue}. V~případě souboru se jedná o~takzvanou SFC.\footnote{Z anglického Single File Component}
 Preferovaným způsobem dle dokumentace je psaní SFC komponent. Každá komponenta se skládá ze tří částí
 zobrazených ve zdrojovém kódu~\ref{code:vue_sfc_overview}. První je šablona,
@@ -399,7 +397,7 @@ následuje kód a v~poslední můžeme definovat styly.
 \end{kicode}
 
 V~rámci kódu komponenty existují dvě API, jakými můžeme definovat reaktivní
-data. V~době Vue 2 \cite{vue2} existovalo pouze jediné -- takzvané Options API (zdrojový kód~\ref{code:vue_options_api}). V~části kódu
+data. V~době Vue 2~\cite{vue2} existovalo pouze jediné -- takzvané Options API (zdrojový kód~\ref{code:vue_options_api}). V~části kódu
 byl zadefinovaný objekt, na kterém mohly existovat vlastnosti {\tt data}, {\tt computed},
 {\tt methods} a jiné. Vlastnost {\tt data} definovala funkci, která byla zodpovědná ze
 vytvoření počátečního stavu komponenty. Všechny vlastnosti vrácené v~objektu
@@ -431,9 +429,9 @@ fragmentovány na více místech.
     </script>
   \end{kicode}
 
-S~příchodem Vue 3 \cite{vue} přišlo Composition API (zdrojový kód~\ref{code:vue_composition_api}). 
+S~příchodem Vue 3 přišlo Composition API (zdrojový kód~\ref{code:vue_composition_api}). 
 Definice reaktivních dat byla přesunuta do funkcí. Tento samotný krok přináší několik výhod. Můžeme 
-definovat reaktivní data i mimo komponentu a nemusíme mít fragmentovanou strukturu SFC. Vše, co je
+definovat reaktivní data i~mimo komponentu a nemusíme mít fragmentovanou strukturu SFC. Vše, co je
 zadefinované v~části kódu, je dostupné v~šabloně. 
 
 
@@ -457,13 +455,13 @@ Vytvoří to pro nás zástupce, na kterém je vlastnost {\tt value}, přes kter
 získat obsah proměnné nebo jej změnit. V~šabloně není nutné volat {\tt .value} na
 reaktivních proměnných - je to zajištěno automaticky.
 
-Aby mohlo Vue \cite{vue} hlídat změny reaktivních dat, vrací funkce {\tt ref} Proxy objekt \cite{proxy}. Proxy
-objekty \cite{proxy} jsou hojně využívány pro sledování změn reaktivních proměnných i mimo framework
-Vue \cite{vue}, proto si je v~rychlosti představíme.
+Aby mohlo Vue hlídat změny reaktivních dat, vrací funkce {\tt ref} Proxy objekt~\cite{proxy}. Proxy
+objekty~\cite{proxy} jsou hojně využívány pro sledování změn reaktivních proměnných i~mimo framework
+Vue, proto si je v~rychlosti představíme.
 
 \subsubsection{Proxy}
 
-V~jednoduchosti má každý objekt v~jazyce JavaScript \cite{js} základní množinu metod \cite{default_methods}. Část této množiny můžeme vidět
+V~jednoduchosti má každý objekt v~jazyce JavaScript~\cite{js} základní množinu metod~\cite{default_methods}. Část této množiny můžeme vidět
 ve zdrojovém kódu ~\ref{code:default_methods}.
 Mezi ně patří metody {\tt get} a {\tt set}, které jsou volány při čtení a zápisu vlastností.
 
@@ -475,8 +473,8 @@ Mezi ně patří metody {\tt get} a {\tt set}, které jsou volány při čtení 
 
 Proxy nám umožní vytvořit zástupce objektu. Zástupce je nový objekt, u~kterého
 můžeme přetížit chování všech základních metod objektu. Tedy kromě pozorování 
-změn můžeme i změnit nastavovaná data. Proxy je primitivum jazyka JavaScript \cite{js}, tedy
-pro vytvoření nové proxy nám satčí zavolat {\tt new Proxy}, jak můžeme vidět ve zdrojovém kódu~\ref{code:new_proxy}
+změn můžeme i~změnit nastavovaná data. Proxy je primitivum jazyka JavaScript~\cite{js}, tedy
+pro vytvoření nové proxy nám satčí zavolat {\tt new Proxy}, jak můžeme vidět ve zdrojovém kódu~\ref{code:new_proxy}.
 
 \begin{kicode}{JavaScript}{code:new_proxy}{Vytvoření proxy.}
   const target = {};
@@ -484,7 +482,7 @@ pro vytvoření nové proxy nám satčí zavolat {\tt new Proxy}, jak můžeme v
   const proxy = new Proxy(target, options);
 \end{kicode}
 
-Druhým parametrem konstruktoru Proxy je objekt definující přetížení základních metod \cite{default_methods}. 
+Druhým parametrem konstruktoru Proxy je objekt definující přetížení základních metod~\cite{default_methods}. 
 Definici takového objektu můžeme vidět ve zdrojovém kódu~\ref{code:proxy_methods}.
 
 \begin{kicode}{JavaScript}{code:proxy_methods}{Přetížení metod pomocí Proxy.}
@@ -520,8 +518,8 @@ Se znalostí chování Proxy definujeme naivní implementaci funkce {\tt ref} ve
 
 Při zavolání naší funkce {\tt ref} dostáváme objekt, na kterém je definovaná vlastnost {\tt value}. 
 Každá změna této vlastnosti zavolá funkci {\tt rebuildComponent}, která je zodpovědná za
-opravení všech míst, kde se s~proměnnou pracuje. V~případě Vue \cite{vue} tato funkce způsobí
-kontrolu virtuálního DOMu oproti reálnému DOMu a sestaví se sada opravných změn, které
+opravení všech míst, kde se s~proměnnou pracuje. V~případě Vue tato funkce způsobí
+kontrolu virtuálního DOMu oproti reálnému DOMu a sestaví se sada opravných změn, která
 opraví reálný DOM tak, ať odpovídá virtuálnímu.
 
 \subsubsection{Options API}
@@ -548,7 +546,7 @@ funkce {\tt reactive} zreaktivnit všechny vlastnosti na objektu, jak můžeme v
   data.y = 42;
 \end{kicode}
 
-U~reaktivních objektů nepotřebujeme volat {\tt .value}. Samotná modifikace i jakkoli hlubokých
+U~reaktivních objektů nepotřebujeme volat {\tt .value}. Samotná modifikace i~jakkoli hlubokých
 objektů je automaticky detekována. 
 
 Nyný máme k~dispozici reaktivní data, odvozené proměnné, ale občas potřebujeme reagovat
@@ -564,13 +562,13 @@ prvního argumentu. Použití můžeme vidět ve zdrojovém kódu~\ref{code:vue_
 \end{kicode}
 
 \subsection{Svelte}
-Svelte \cite{svelte} přistupuje k~celému problému reaktivity jinak. Místo virtuálního DOMu přidává kompilační
-krok. Místo Proxy \cite{proxy} hlídá změny na základě přiřazení.
+Svelte~\cite{svelte} přistupuje k~celému problému reaktivity jinak. Místo virtuálního DOMu přidává kompilační
+krok. Místo Proxy~\cite{proxy} hlídá změny na základě přiřazení.
 
 \subsubsection{Komponenty}
 
-Svelte \cite{svelte} definuje komponenty podobným způsobem jako jsou Vue SFC. Každá komponenta se skládá,
-stejně jako Vue \cite{vue}, ze tří částí definovaných ve zdrojovém kódu~\ref{code:svelte_sfc} -- kód, šablona a styl.
+Svelte definuje komponenty podobným způsobem jako jsou Vue SFC. Každá komponenta se skládá,
+stejně jako Vue, ze tří částí definovaných ve zdrojovém kódu~\ref{code:svelte_sfc} -- kód, šablona a styl.
 S~tím rozdílem, že šablona není obalená v~template značce.
 
 \begin{absolutelynopagebreak}
@@ -583,7 +581,7 @@ S~tím rozdílem, že šablona není obalená v~template značce.
 
 \subsubsection{Reaktivita}
 
-Na první pohled vypadá kód Svelte komponent ve zdrojovém kódu~\ref{code:svelte_simple_code} jako klasický JavaScript \cite{js}. Deklarujeme proměnnou {\tt count},
+Na první pohled vypadá kód Svelte komponent ve zdrojovém kódu~\ref{code:svelte_simple_code} jako klasický JavaScript~\cite{js}. Deklarujeme proměnnou {\tt count},
 klasicky ji můžeme upravit a následně ji použít v~šabloně.
 
 \begin{kicode}{JavaScript}{code:svelte_simple_code}{Svelte příklad.}
@@ -600,7 +598,7 @@ klasicky ji můžeme upravit a následně ji použít v~šabloně.
   </button>
 \end{kicode}
 
-Až téměř magicky bude vše fungovat přesně dle očekávání. Stejně jako Vue \cite{vue} umožňuje Svelte \cite{svelte} definovat
+Až téměř magicky bude vše fungovat přesně dle očekávání. Stejně jako Vue umožňuje Svelte definovat
 odvozené proměnné, které můžeme vidět ve zdrojovém kódu~\ref{code:svelte_computed}. Zápis je poněkud nezvyklý, ale umožňuje nám definovat jak odvozené proměnné, tak
 hlídat změny stavu stejnou syntaxí. 
 
@@ -620,7 +618,7 @@ vypíše text.
 
 Avšak ne všechno jde takto hladce. Musíme si dávat pozor na to, abychom vždy provedli přiřazení.
 Nejvíce na toto trpí pole, kde přidání nového záznamu musí být následováno přiřazením pole
-samo do sebe, nebo s~pomocí ES6\footnote{Z anglického ECMAScript 6, což je specifikace definující standard jazyka JavaScript}. Oba přístupy jsou demonstrovány ve zdrojovém kódu~\ref{code:svelte_problematic_array}.
+samo do sebe, nebo s~pomocí ES6.\footnote{Z anglického ECMAScript 6, což je specifikace definující standard jazyka JavaScript} Oba přístupy jsou demonstrovány ve zdrojovém kódu~\ref{code:svelte_problematic_array}
 
   \begin{kicode}{JavaScript}{code:svelte_problematic_array}{Svelte problémové části.}
     <script>
@@ -667,14 +665,14 @@ Ale v~tomto zdrojovém kódu~\ref{code:svelte_object_nok} by změna detekována 
 \subsubsection{Reaktivita mimo komponenty}
 
 Aby toho nebylo málo, změny přiřazením jsou detekovány pouze v~rámci Svelte komponent. Pokud bychom
-chtěli mít reaktivní proměnnou mimo komponentu, má pro to Svelte \cite{svelte} připravené takzvané sklady.
+chtěli mít reaktivní proměnnou mimo komponentu, má pro to Svelte připravené takzvané sklady.
 \footnote{Z~anglického názvu stores} 
 
 Sklady jsou obyčejné objekty s~metodou {\tt subscribe}, která umožní komukoli být upozorněn v~případě změny
 hodnoty skladu. Metoda {\tt subscribe} vrací funkci k~zrušení sledování změn. Existují tři typy 
 skladů -- pro zápis (writable), pro čtení (readable) a odvozené (derived).
 
-Zapisovatelné sklady jsou obdobou deklarace reaktivní proměnné pomocí funkce {\tt ref} z~Vue \cite{vue}. Kromě povinné metody
+Zapisovatelné sklady jsou obdobou deklarace reaktivní proměnné pomocí funkce {\tt ref} z~Vue. Kromě povinné metody
 subscribe obsahují také metody {\tt set} a {\tt update} k~modifikaci stavu. Jednoduché využití skladu můžeme vidět
 ve zdrojovém kódu~\ref{code:svelte_stores}.
 
@@ -694,7 +692,7 @@ ve zdrojovém kódu~\ref{code:svelte_stores}.
   \end{kicode}
 
 Tento způsob zápisu je docela zdlouhavý a zároveň náchylný k~chybě. V~ukázkovém příkladu jsme totiž zapomněli
-při zničení komponenty zavolat \\{\tt unsubscribe}. Mohlo by tedy dojít postupem času k~úniku paměti. Svelte \cite{svelte} má pro
+při zničení komponenty zavolat \\{\tt unsubscribe}. Mohlo by tedy dojít postupem času k~úniku paměti. Svelte má pro
 použití skladů syntaktický cukr. Místo manuálního zápisu a odpisu pro sledování změn můžeme v~rámci komponenty
 použít sklad s~prefixem {\tt \$}, jak je demonstrováno ve zdrojovém kódu~\ref{code:svelte_store_with_sugar}.
 Ukázkový příklad~\ref{code:svelte_stores} se tím zjednoduší a automaticky se zajistí volání metod {\tt subscribe} a {\tt unsubscribe}.
@@ -706,7 +704,7 @@ Ukázkový příklad~\ref{code:svelte_stores} se tím zjednoduší a automaticky
     // svelte komponenta
     <script>
     </script>
-    <div>{$countValue}</div>
+    <div>{$count}</div>
   \end{kicode}
 
 Dále můžeme vytvářet sklady, které slouží pouze pro čtení. Tento typ skladů se může využít například pro
@@ -733,14 +731,14 @@ má být hodnota odvozená a druhý je funkce pro výpočet odvozené hodnoty.
 
 \subsection{SolidJS}
 
-Poslední framework je v~určitém smyslu na pomezí mezi předchozími frameworky. Jako Vue \cite{vue} využívá Proxy objektů \cite{proxy}
-k~hlídání změn\footnote{Pro hlídání zanořených změn} a jako Svelte \cite{svelte} se vyhýbá virtual DOMu.
+Poslední framework je v~určitém smyslu na pomezí mezi předchozími frameworky. Jako Vue využívá Proxy objektů~\cite{proxy}
+k~hlídání změn\footnote{Pro hlídání zanořených změn} a jako Svelte se vyhýbá virtuálnímu DOMu.
 
 \subsubsection{Komponenty}
 
-Komponenty jsou zde prosté funkce, které vrací JSX. Z~tohoto pohledu je SolidJS \cite{solidjs} velmi podobný Reactu \cite{react}.
+Komponenty jsou zde prosté funkce, které vrací JSX~\cite{jsx}. Z~tohoto pohledu je SolidJS~\cite{solidjs} velmi podobný Reactu~\cite{react}.
 Nemáme tedy žádné speciální soubory s~koncovkou {\tt .solid}. Místo toho máme soubory s~koncovkou {\tt .tsx} pro
-TypeScript \cite{ts} nebo {\tt .jsx} pro JavaScript \cite{js}. Každý takový soubor může obsahovat i několik komponent. Samotná
+TypeScript~\cite{ts} nebo {\tt .jsx} pro JavaScript~\cite{js}. Každý takový soubor může obsahovat i~několik komponent. Samotná
 funkce definující komponentu slouží jako konstruktor. Je volaná pouze jednou. Komponentu pro zobrazení
 čítače můžeme vidět ve zdrojovém kódu~\ref{code:solid_component}.
 
@@ -756,9 +754,9 @@ funkce definující komponentu slouží jako konstruktor. Je volaná pouze jedno
 
 \subsubsection{Reaktivita}
 
-Máme k~dispozici tři hlavní primitiva, které nám umožňují definovat reaktivní data. Obdobou funkce {\tt ref}
-z~Vue \cite{vue} je zde funkce {\tt createSignal}. Místo toho, aby nám vrátila objekt, vrací dvojici {\tt getter} a {\tt setter}.
-Dále máme funkci {\tt createMemo}, které nám umožňuje definovat odvozenou proměnnou a {\tt createEffect}, kterou 
+Máme k~dispozici tři hlavní primitiva, která nám umožňují definovat reaktivní data. Obdobou funkce {\tt ref}
+z~Vue je zde funkce {\tt createSignal}. Místo toho, aby nám vrátila objekt, vrací dvojici {\tt getter} a {\tt setter}.
+Dále máme funkci {\tt createMemo}, které nám umožňuje definovat odvozenou proměnnou a \\{\tt createEffect}, kterou 
 můžeme využít pro sledování změn a aplikování vedlejšího efektu. Použití základních funkcí můžeme vidět ve 
 zdrojovém kódu~\ref{code:solid_reactivity}.
 
@@ -768,7 +766,7 @@ zdrojovém kódu~\ref{code:solid_reactivity}.
     const doubleCount = createMemo(() => count() * 2);
   \end{kicode}
 
-Dále si přiblížíme způsob, jakým SolidJS \cite{solidjs} hlídá změny. Jádrem celého systému je globální zásobník, který
+Dále si přiblížíme způsob, jakým SolidJS hlídá změny. Jádrem celého systému je globální zásobník, který
 se využívá pro automatické detekování závislostí. Ve výsledku to znamená, že není zapotřebí proxy objektů
 k~docílení reaktivity.
 
@@ -794,7 +792,7 @@ kódu~\ref{code:solid_signal}.
   \end{kicode}
 
 Nyní ke způsobu, jakým dochází k~registrování odběratelů změn. Vždy, před spuštěním funkce poskytnuté do 
-funkce \\{\tt createEffect} nebo {\tt createMemo} se zaregistrují jako odběratelé do globálního zásobníku. Každé spuštění
+funkce {\tt createEffect} nebo {\tt createMemo} se zaregistrují jako odběratelé do globálního zásobníku. Každé spuštění
 {\tt getteru} signálu následně způsobí zkontrolování, zda všichni ze zásobníku jsou registrování v~interním seznamu
 odběratelů daného signálu. Rozšířená verze tedy může být definována jako ve zdrojovém kódu~\ref{code:solid_signal_with_registration}.
 
@@ -827,10 +825,10 @@ funkci, která je schopná detekovat, které části DOMu mají být upraveny p�
 Jediná podmínka, která musí být splněna pro správné chování komponent je volání funkce {\tt createRoot}. 
 Ta je zodpovědná za úklid po zaniklých komponentách aby nedocházelo k~úniku paměti. Tato funkce se 
 automaticky volá v~rámci {\tt render} funkce, která je doporučeným způsobem, jak vytvořit vstupní bod
-SolidJS \cite{solidjs} aplikace.
+SolidJS aplikace.
 
 Na rozdíl od frameworků využívajících virtuální DOM, kde dochází k~renderovacímu cyklu, při němž 
-může dojít během jedné aktualizace k~více změnám, SolidJS \cite{solidjs} využívá synchronní aktualizace. Tedy například
+může dojít během jedné aktualizace k~více změnám, SolidJS využívá synchronní aktualizace. Tedy například
 pokud bychom aktualizovali dvě proměnné {\tt name} a {\tt surname} ve zdrojovém kódu~\ref{code:solid_sync_reactivity},
 ihned po aktualizaci {\tt name} bude již změna aplikována do DOMu.
 
@@ -873,27 +871,27 @@ všech modifikací. Viz zdrojový kód~\ref{code:solid_batch}.
       \end{kicode}
 
 Pokud bychom opomenuli odvozené funkce, problém okamžitého projevení do DOMu zmizí. Naopak se občas
-dostáváme do situace například ve Vue \cite{vue}, kdy si musíme počkat na aktualizaci DOMu například abychom mohli
-správně určit šířku nebo výšku elementu. Díky tomu, že SolidJS \cite{solidjs} nemusí porovnávat virtuální DOM s~reálným,
+dostáváme do situace například ve Vue, kdy si musíme počkat na aktualizaci DOMu například abychom mohli
+správně určit šířku nebo výšku elementu. Díky tomu, že SolidJS nemusí porovnávat virtuální DOM s~reálným,
 si může dovolit provést změnu okamžitě, protože cena této operace je stejná, ať se jedná o~samostatnou změnu
 nebo o~sadu změn. 
     
 \subsubsection{Proxy objekty}
-Na začátku jsme se řekli, že je SolidJS \cite{solidjs} podobný Vue \cite{vue} právě v~tom, že využívá Proxy objekty. Pokud ale
-signály nevyužívají Proxy objekty \cite{proxy} a signály jsou základním stavebním blokem reaktivního systému jako
-funkce {\tt ref} z~Vue \cite{vue}, k~čemu jsou zapotřebí?
+Na začátku jsme se řekli, že je SolidJS podobný Vue právě v~tom, že využívá Proxy objekty. Pokud ale
+signály nevyužívají Proxy objekty~\cite{proxy} a signály jsou základním stavebním blokem reaktivního systému jako
+funkce {\tt ref} z~Vue, k~čemu jsou zapotřebí?
 
-Pravdou je, že nejsou striktně potřebné. Jsme schopni psát celý systém bez Proxy objektů \cite{proxy}.
+Pravdou je, že nejsou striktně potřebné. Jsme schopni psát celý systém bez Proxy objektů~\cite{proxy}.
 Někdy nám mohou ale ušetřit práci. Představme si aplikaci, která eviduje nákupní seznam. Můžeme přidat
 záznam a následně jej v~seznamu označit za hotový. Existují z~pohledu reaktivity tři způsoby, jak takovou 
 aplikaci implementovat.
 
 Prvním je naivní implementace zobrazena ve zdrojovém kódu~\ref{code:solid_naive_array}. Vytvoříme signál {\tt list}
 reprezentující seznam. Přidání záznamu spočívá ve 
-vytvoření nového pole, kde na konec přidáme nový záznam. Dosud je vše v~pořádku. SolidJS \cite{solidjs} se postará o~to,
+vytvoření nového pole, kde na konec přidáme nový záznam. Dosud je vše v~pořádku. SolidJS se postará o~to,
 aby byl DOM modifikován minimalisticky, tedy pouze přidá nový element na konec. Dále po kliknutí na záznam
 chceme tento záznam označit za vyřešený. Můžeme stávající seznam projít, a element, na který jsme klikli,
-nahradit novým elementem, který bude mít nastavený příznak, že byl vyřešen. Pro SolidJS \cite{solidjs} to je ale vytvoření
+nahradit novým elementem, který bude mít nastavený příznak, že byl vyřešen. Pro SolidJS to je ale vytvoření
 nového elementu a zrušení původního. Místo označení textu například pomocí css bude v~DOMu nahrazen celý
 element. Toto není nejefektivnější, jelikož je celá komponenta zahozena a znovu vytvořena kvůli minimální
 změně.
@@ -922,7 +920,7 @@ změně.
     };
 \end{kicode}
 
-Druhým způsobem, zobrazeným ve zdrojovém kódu~\ref{code:solid_signal_array}, jak se s~touto situací vypořádat 
+Druhým způsobem, zobrazeným ve zdrojovém kódu~\ref{code:solid_signal_array}, jak se s~touto situací vypořádat, 
 je využití signálu na úrovni záznamu. Každé vytvoření
 záznamu vytvoří signál {\tt completed}. Místo samotné hodnoty pošleme do objektu {\tt getter} a {\tt setter} této hodnoty.
 Při přepnutí stavu záznamu můžeme zavolat poskytnutý {\tt setter}, tím dojde pouze k~úpravě potřebné pro projevení
@@ -955,12 +953,12 @@ upravit také komponentu pro výpis záznamů. Místo toho abychom pouze vypsali
 \end{kicode}
 
 Posledním způsobem, zobrazeným ve zdrojovém kódu ~\ref{code:solid_store_array}, je využití skladu. 
-I~SolidJS \cite{solidjs} má své sklady, pouze z~jiného důvodu, než Svelte \cite{svelte}. Ve Svelte \cite{svelte}
+I~SolidJS má své sklady, pouze z~jiného důvodu, než Svelte. Ve Svelte
 jsme je využívali ke zprovoznění reaktivity mimo komponenty. Zde takový problém nemáme. Funkci {\tt createSignal}
-můžeme volat odkudkoli. Sklady nám v~rámci SolidJS \cite{solidjs} pomohou s~hloubkovou reaktivitou. V~předchozím řešení 
+můžeme volat odkudkoli. Sklady nám v~rámci SolidJS pomohou s~hloubkovou reaktivitou. V~předchozím řešení 
 jsme museli upravit komponentu pro zobrazení záznamů, jelikož jsme místo obyčejné hodnoty dostali {\tt getter}.
-Pokud místo signálu pro reprezentaci seznamu využijeme skladu, můžeme pracovat se záznamem jako v~naivní
-implementaci. SolidJS \cite{solidjs} se postará o~vytvoření potřebných signálů na pozadí. Vyváření signálu se navíc provádí
+Pokud místo signálu pro reprezentaci seznamu využijeme sklad, můžeme pracovat se záznamem jako v~naivní
+implementaci. SolidJS se postará o~vytvoření potřebných signálů na pozadí. Vyváření signálu se navíc provádí
 pouze pro vlastnosti záznamu, které jsou sledovány, líně až v~okamžiku potřeby. Tímto máme řešení, které
 je definováno podobně přímočaře jako naivní řešení, ale je stejně efektivní jako druhé řešení.
 
@@ -989,8 +987,8 @@ je definováno podobně přímočaře jako naivní řešení, ale je stejně efe
 \end{absolutelynopagebreak}
 
 Tedy programátor může rozhodnout, zda chce využít Proxy objektů k~zjednodušení definice komponent, nebo zda
-se chce využití Proxy objektů vyhnout. Starší prohlížeče Proxy objekty nemusejí podporovat, proto se SolidJS \cite{solidjs}
-hodí i pro vývoj aplikací do různých embed řešení, které mají zastaralý software.
+se chce využití Proxy objektů vyhnout. Starší prohlížeče Proxy objekty nemusejí podporovat, proto se SolidJS
+hodí i~pro vývoj aplikací do různých embed řešení, které mají zastaralý software.
 
 \newpage
 \section{Srovnání frameworků}
@@ -1002,18 +1000,18 @@ Při psaní kódu je vhodné dodržovat určitý styl. Čím jasněji nám frame
 měli při psaní kódu postupovat, tím budou existovat menší rozdíly mezi projekty nebo dokonce v~rámci projektu.
 
 \subsubsection{Vue}
-Z~tohoto pohledu je Vue \cite{vue} nejvíc benevolentní. Umožňuje nám definovat komponenty jako funkce nebo SFC a existují
+Z~tohoto pohledu je Vue nejvíc benevolentní. Umožňuje nám definovat komponenty jako funkce nebo SFC a existují
 2 reaktivní API z~historických důvodů. Nad možností úniku z~SFC se dá polemizovat. Možnost definovat anonymní
-komponenty nebo využívat celé síly JavaScriptu \cite{js} k~definování šablon je užitečné, ale Options API je již přežitek,
+komponenty nebo využívat celé síly JavaScriptu~\cite{js} k~definování šablon je užitečné, ale Options API je již přežitek,
 který pouze překáží. 
 
 \subsubsection{Svelte}
-Svelte \cite{svelte} razí svou myšlenku lépe. Existují pouze SFC. Ale díky tomu, že reaktivita funguje implicitně pouze v~rámci
+Svelte razí svou myšlenku lépe. Existují pouze SFC. Ale díky tomu, že reaktivita funguje implicitně pouze v~rámci
 komponent musíme mít nějaký jiný způsob, jak si poradit s~reaktivními daty mimo komponenty. Následně si musíme
 pamatovat která proměnná je sklad a která ne, jelikož se od toho odvíjí způsob práce s~takovými proměnnými.
 
 \subsubsection{SolidJS}
-Nejpřesněji definovanou myšlenku zastává SolidJS \cite{solidjs}. Komponenty jsou pouze funkce, pro definici šablon se využívá
+Nejpřesněji definovanou myšlenku zastává SolidJS. Komponenty jsou pouze fun\-kce, pro definici šablon se využívá
 JSX. Reaktivita funguje stejně mimo komponentu jako v~komponentě. Preferuje imutabilní data, která mohou ve 
 velkých systémech výrazně zjednodušit způsob přemýšlením nad tokem dat.
 
@@ -1023,28 +1021,28 @@ Některé nesou na svých bedrech roky vývoje, jiné jsou postavené na chybác
 přehled jednotlivých reaktivních systému, jejich výhod a nevýhod.
 
 \subsubsection{Vue}
-Ve Vue \cite{vue} mohou být reaktivní hodnoty definované pomocí {\tt ref} nebo {\tt reactive}. Ve výsledku to znamená, že mohou být 
-reaktivní data i bez typického {\tt .value} přístupu. Při použití reaktivní proměnné v~šabloně dochází k~automatickému
+Ve Vue mohou být reaktivní hodnoty definované pomocí {\tt ref} nebo {\tt reactive}. Ve výsledku to znamená, že mohou být 
+reaktivní data i~bez typického {\tt .value} přístupu. Při použití reaktivní proměnné v~šabloně dochází k~automatickému
 rozbalení. Což znamená, že se nemusí volat {\tt .value} na reaktivního hodnotách v~šabloně, ale v~kódu ano. Takových 
-drobných odchylek skrývá Vue \cite{vue} docela hodně.
+drobných odchylek skrývá Vue docela hodně.
 
 \subsubsection{Svelte}
-Svelte \cite{svelte} má problém s~detekováním změn. Programátor si musí dávat pozor na to, aby se vždy upravovaný objekt
+Svelte má problém s~detekováním změn. Programátor si musí dávat pozor na to, aby se vždy upravovaný objekt
 objevil na levé straně přiřazení. Společně s~rozdílným způsobem definováním reaktivních dat uvnitř a mimo komponenty
-je na tom lépe než Vue \cite{vue}, ale vyžaduje od programátora také neustálou ostražitost a znalost fungování reaktivního 
-systému. Zde přichází další nevýhoda Svelte \cite{svelte}. Je relativně náročné přesně definovat, co se na pozadí vlastně děje.
-Ve Vue \cite{vue} i SolidJS \cite{solidjs} je vyhodnocovací proces triviální a pokud je potřeba, může se člověk podívat do zdrojového kódu.
-V~případě Svelte \cite{svelte} jsme schopni říct, jak reaktivní systém funguje, ale zkoumat hlouběji fungování překladače je
+je na tom lépe než Vue, ale vyžaduje od programátora také neustálou ostražitost a znalost fungování reaktivního 
+systému. Zde přichází další nevýhoda Svelte. Je relativně náročné přesně definovat, co se na pozadí vlastně děje.
+Ve Vue i~SolidJS je vyhodnocovací proces triviální a pokud je potřeba, může se člověk podívat do zdrojového kódu.
+V~případě Svelte jsme schopni říct, jak reaktivní systém funguje, ale zkoumat hlouběji fungování překladače je
 výrazně náročnější. Navíc dochází k~největšímu rozchodu mezi psaným kódem a vyprodukovaným kódem.
 
 \subsubsection{SolidJS}
-SolidJS \cite{solidjs} vychází opět nejlépe. Máme jednotný přístup k~reaktivitě pomocí signálů. Je jasně rozlišeno čtení od zápisu.
+SolidJS vychází opět nejlépe. Máme jednotný přístup k~reaktivitě pomocí signálů. Je jasně rozlišeno čtení od zápisu.
 I~ve složitějších strukturách můžeme přesně definovat, co je reaktivní a co ne. Synchronní aktualizace DOMu nepřináší
-nutnost ručního vynucení aktualizace\footnote{Vue má funkci {\tt nextTick} a Svelte funkci {\tt tick}}.
+nutnost ručního vynucení aktualizace.\footnote{Vue má funkci {\tt nextTick} a Svelte funkci {\tt tick}}
 
 \subsection{Vygenerovaný kód}
 
-Využití frameworků nám na jednu stranu ušetří práci, na druhou mohou přinést i nevýhody.
+Využití frameworků nám na jednu stranu ušetří práci, na druhou mohou přinést i~nevýhody.
 Jednotlivé frameworky se mohou lišit ve třech hlavních kategoriích. CPU využití při změně DOMu,
 paměť a datová velikost přenášených souborů. První dvě kategorie jsou velmi závislé na typu aplikace.
 U~jednoduchého webu jsou téměř až zanedbatelné. Co ale může hrát vcelku velkou roli je výsledná
@@ -1105,8 +1103,8 @@ konkrétní stránky v~případě, že knihovna pro simulování navigace mezi s
 Aplikace Thessenger se skládá z~21 malých souborů, kde celková velikost činí 113,8 kB.
 
 \subsubsection{SolidJS}
-U~SolidJS \cite{solidjs} jsme schopní se dostat velikostí výsledného souboru výrazně níž. Minifikovaná verze má pouze
-8kB. Obdobně jako u~Vue \cite{vue} dochází k~větším úpravám pouze v~šabloně. Komponentu před sestavením můžeme vidět
+U~SolidJS jsme schopní se dostat velikostí výsledného souboru výrazně níž. Minifikovaná verze má pouze
+8kB. Obdobně jako u~Vue dochází k~větším úpravám pouze v~šabloně. Komponentu před sestavením můžeme vidět
 ve zdrojovém kódu~\ref{code:solid_before_build} a po sestavení ve zdrojovém kódu~\ref{code:solid_after_build}.
 
   \begin{kicode}{JavaScript}{code:solid_before_build}{Srovnání kódu SolidJS před sestavením.}
@@ -1149,7 +1147,7 @@ ve zdrojovém kódu~\ref{code:solid_before_build} a po sestavení ve zdrojovém 
 Aplikace Thessenger vygeneruje 15 souborů s~celkovou velikostí 57 kB.
 
 \subsubsection{Svelte}
-Svelte \cite{svelte} dokázal vyprodukovat nejmenší soubor s~velikostí 4,4kB. Dochází zde k~větším úpravám
+Svelte dokázal vyprodukovat nejmenší soubor s~velikostí 4,4kB. Dochází zde k~větším úpravám
 jak samotného kódu, tak šablony. Komponentu před sestaveím můžeme vidět ve zdrojovém kódu~\ref{code:svelte_before_build} a po
 sestavení ve zdrojovém kódu~\ref{code:svelte_after_build}. 
 
@@ -1185,7 +1183,7 @@ sestavení ve zdrojovém kódu~\ref{code:svelte_after_build}.
     }
 \end{kicode}
 
-Svelte \cite{svelte} router nepodporoval roztříštění kódu dle jednotlivých stránek, máme proto pouze jediný soubor
+Svelte router nepodporoval roztříštění kódu dle jednotlivých stránek, máme proto pouze jediný soubor
 s~velikostí 69,9 kB.
 
 
@@ -1197,7 +1195,7 @@ s~velikostí 69,9 kB.
   Se svojí zkušeností ve Vue jsem aplikaci začal psát právě v~tomto frameworku. Přesně jsem věděl co očekávat a na
   co si dát pozor. Svelte byl framework, který jsem delší dobu sledoval se vyvíjet, proto byl druhý v~pořadí. Přepis
   z~Vue do Svelte byl poněkud krkolomný. Přístup k~reaktivitě je dost odlišný, takže bylo nutné některé části více
-  upravit i logicky. U~SolidJS jsem byl nejvíce překvapen. Překlopení z~Vue probíhalo velmi jednoduše. Reaktivní
+  upravit i~logicky. U~SolidJS jsem byl nejvíce překvapen. Překlopení z~Vue probíhalo velmi jednoduše. Reaktivní
   přístupy obou frameworků jsou si velmi podobné. 
 
   Od Svelte jsem očekával víc, než co doručil. Hlídání změn pomocí přiřazení sice zní dobře na papíře, ale v~realitě
@@ -1210,8 +1208,8 @@ s~velikostí 69,9 kB.
 \end{kiconclusions}
 
 \begin{kiconclusions}[english]
-  With my experience with Vue i started writing the application in this framework. I~knew exactly what to expect and 
-  what to be wary of. I~was watching Svelte long time develop, so i took it next. Rewrite of the application from Vue 
+  With my experience with Vue i~started writing the application in this framework. I~knew exactly what to expect and 
+  what to be wary of. I~was watching Svelte long time develop, so i~took it next. Rewrite of the application from Vue 
   to Svelte was not as easy as expected. Both frameworks do handle reactive data in quite different ways so some parts
   were needed to be edited even logically. I~was the most surprised with SolidJS. Rewrite from Vue went really smoothly
   since both reactive systems are quire similar.
@@ -1244,12 +1242,11 @@ Přehled příloh textu práce:
     archivu), tj.~zdrojový text textu a příloh, vložené obrázky, apod.
 
   \item[\texttt{readme.md}] \hfill \\
-    Textový soubor (s~příponou např. \texttt{.txt}) s~informacemi
-    o~zprovoznění software.
+    Textový soubor s~informacemi o~zprovoznění software.
 
   \item[\texttt{backend, common, vue, solidjs, svelte}] \hfill \\
     Adresáře obsahující veškeré soubory potřebné ke spuštění aplikace, kromě závislostí.
-    Přesný postup, jak závislosti získat je popsaný v souboru readme.md
+    Přesný postup, jak závislosti získat je popsaný v souboru \\readme.md
 
 \end{description}
 
@@ -1258,11 +1255,11 @@ Přehled příloh textu práce:
 %% Sazba volitelného seznamu zkratek, za přílohami.
 % \printglossary
 
-%% Sazba povinné bibliografie, za přílohami (případně i za seznamem
+%% Sazba povinné bibliografie, za přílohami (případně i~za seznamem
 %% zkratek). Při použití BibLaTeXu použijte makro
 %% \printbibliography. jinak prostředí thebibliography. Ne obojí!
 
-%% Sazba i v textu necitovaných zdrojů, při použití
+%% Sazba i~v textu necitovaných zdrojů, při použití
 %% BibLaTeXu. Volitelné.
 \nocite{*}
 %% Vlastní sazba bibliografie při použití BibLaTeXu.
@@ -1273,6 +1270,8 @@ Přehled příloh textu práce:
   \bibitem{php} Php. Dostupný z: \url{https://www.php.net/}
 
   \bibitem{js} JavaScript. Dostupný z: \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript}
+
+  \bibitem{jsx} JSX. Dostupný z: \url{https://www.typescriptlang.org/docs/handbook/jsx.html}
 
   \bibitem{ts} TypeScript. Dostupný z: \url{https://www.typescriptlang.org/}
   
